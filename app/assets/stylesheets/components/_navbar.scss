@@ -1,7 +1,11 @@
-img.logo {
-  height: 40px !important;
-  width: auto;
-  margin-right: 15px;
+.funnel-display-text {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 600;
+}
+
+.logo img {
+  height: 50px;
+  max-width: 100%;
 }
 
 .navbar {
@@ -15,10 +19,13 @@ img.logo {
 }
 
 .nav-links {
-display: flex;
+  font-family: "Funnel Display", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
   list-style: none;
   gap: 15px;
-  align-items: center;
   color: #BABCE2;
   margin: 0;
   padding: 0;
@@ -28,16 +35,17 @@ display: flex;
   display: inline-block;
 }
 
-
 .nav-links a {
   text-decoration: none;
   color: #BABCE2;
-  padding: 8px 12px;
+  padding: 10px 12px;
+  height: 40px;
+  line-height: 40px;
   transition: background-color 0.3s;
 }
 
 .nav-links a.sign-in-link {
-  color : #DFAEA0;
+  color: #DFAEA0;
 }
 
 .nav-links a:hover {
