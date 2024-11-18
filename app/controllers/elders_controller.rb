@@ -20,6 +20,6 @@ class EldersController < ApplicationController
 
   private
   def elder_params
-    params.require(:elder).permit(:name, :description, :price, :available, :user_id)
+    params.require(:elder).permit(:name, :description, :price, :available)
   end
 end
