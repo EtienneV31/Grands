@@ -1,0 +1,28 @@
+footer {
+  background-color: #BABCE2;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer a {
+  color: #FFFCF5;
+  font-size: 30px;
+}
+
+footer a:hover {
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+footer div.footer-text {
+  font-family: 'Funnel Display', sans-serif;
+  color: #FFFCF5;
+}
