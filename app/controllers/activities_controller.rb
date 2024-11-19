@@ -17,9 +17,9 @@ class ActivitiesController < ApplicationController
     @activity.user = current_user
 
     if @activity.save
-      redirect_to activities_path
+      redirect_to activities_path, notice: 'Activity was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new, alert: "There was an error creating the booking."
     end
   end
 
