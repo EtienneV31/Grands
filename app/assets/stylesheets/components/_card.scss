@@ -1,11 +1,12 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
+  border-radius: 27px;
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -17,24 +18,62 @@
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
   margin: 0;
+  margin-bottom: 1rem;
+  font-family: 'Avenir Next';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+
+  color: rgb(55, 67, 117);
 }
 
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.card-trip-infos {
+  padding: 2rem;
+  text-align: center;
   position: relative;
 }
 
-.card-trip-infos .card-trip-user {
+.card-trip-user {
   position: absolute;
-  // right: 16px;
-  top: -20px;
-  width: 40px;
-  margin: auto;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem; /* Largeur fixe */
+  height: 5rem; /* Hauteur fixe */
+  border: solid 6px white;
+  object-fit: cover; /* Maintient les proportions de l'image */
+}
+
+.container .row {
+margin-top: 3rem;
+margin-bottom: 8rem;
+}
+
+.container h2 {
+font-family: 'Funnel Display';
+font-style: normal;
+font-weight: 800;
+font-size: 1.5rem;
+
+color: #374375;
+}
+
+.title2 {
+  margin-top: 4rem;
+  padding: 1rem;
+}
+
+.row h2 {
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  list-style-type: none; /* Retire les puces */
+  padding: 0; /* Retire le padding par défaut */
+  margin: 0; /* Retire la marge par défaut */
+  display: flex;
+  flex-wrap: wrap;
 }
