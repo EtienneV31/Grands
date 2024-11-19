@@ -1,0 +1,7 @@
+<h1>Coucou c'est Jean Michel</h1>
+
+<p><%= @elder.name %></p>
+<p><%= @elder.description %></p>
+<p><%= @elder.price %> €</p>
+
+<%= link_to 'Booking' , new_elder_booking_path(@elder) %>

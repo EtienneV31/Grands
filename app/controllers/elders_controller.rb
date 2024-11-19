@@ -8,6 +8,10 @@ class EldersController < ApplicationController
     @elder = Elder.new
   end
 
+  def show
+    @elder = Elder.find(params[:id])
+  end
+
   def create
     @elder = Elder.new(elder_params)
     @elder.user = current_user

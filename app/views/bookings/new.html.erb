@@ -1,0 +1,17 @@
+<h1>Book <%= @elder.name %></h1>
+
+<%= form_with model: @booking, url: elder_bookings_path(@elder), local: true do |form| %>
+  <div>
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Book Now", class: "btn btn-primary" %>
+  </div>
+<% end %>
