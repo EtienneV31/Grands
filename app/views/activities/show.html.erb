@@ -3,5 +3,10 @@
 <p><%= @activity.name %></p>
 <p><%= @activity.description %></p>
 <p><%= @activity.price %> €</p>
+<% if @activity.photo.attached? %>
+  <%= cl_image_tag @activity.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <p>Aucune image disponible pour cette activité.</p>
+<% end %>
 
 <%= link_to 'Booking' , new_activity_booking_path(@activity) %>
