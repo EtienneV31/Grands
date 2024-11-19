@@ -1,27 +1,51 @@
-<div class="banner" style="background-image: url(<%= image_path("background-banner.jpg") %>);">
-  <div class="container">
-    <h1>Partagez un moment <br>d'émotion</h1>
-    <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
-    <a class="btn btn-flat" href="elders">Je découvre</a>
-  </div>
-</div>
+<body  style="background-color: #F7EDEC">
 
-<div class="container">
-  <div class="row">
-    <% 4.times do %>
-      <div class="col-md-3">
-        <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2>Title here</h2>
-              <p>Short description here!</p>
-            </div>
-            <h2 class="card-trip-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-          </div>
-        </div>
-      </div>
-    <% end %>
+  <div class="banner" style="background-image: url(<%= image_path("background-banner.jpg") %>);">
+    <div class="container">
+      <h1>Partagez un moment <br>d'émotion</h1>
+      <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
+      <a class="btn btn-flat" href="elders">Je découvre</a>
+    </div>
   </div>
-</div>
+
+  <div class="container">
+    <div class="title2">
+      <h2>Recomandées</h2>
+    </div>
+    <ul class="row">
+
+    <%# Mettre les cards dans le back ?? %>
+
+      <% cards = [
+          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
+          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
+          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
+          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
+        ] %>
+        <% cards.each do |card| %>
+          <li class="col-md-3">
+            <div class="card-trip">
+              <img src="<%= image_path(card[:image_path]) %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= card[:title] %></h2>
+                  <p><%= card[:description] %></p>
+                </div>
+                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
+              </div>
+            </div>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="top-users">
+      <h2 class="top-users__title">Top users</h2>
+    </div>
+  </div>
+
+  
+
+
+</body>
