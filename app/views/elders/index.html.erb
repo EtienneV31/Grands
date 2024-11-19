@@ -1,4 +1,23 @@
-<h1>Coucou c'est les vieux</h1>
+<div class="banner">
+  <div class="container">
+    <h1>Que recherchez-vous ?</h1>
+    <h3>Trouvez l'activité qui vous ressemble !</h3>
+
+    <div class="form-container">
+      <%= form_with do |form| %>
+        <div class="search-form">
+            <%= form.label :city, class: "form-control" %>
+            <%= form.label :interest, class: "form-control" %>
+            <%= form.label :gender, class: "form-control" %>
+            <%= form.submit "Search", class: "search-button btn" %>
+        </div>
+      </div>
+
+
+    <% end %>
+
+  </div>
+</div>
 
 <% @elders.each do |elder| %>
   <p><%= elder.name %></p>
