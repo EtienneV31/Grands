@@ -1,12 +1,54 @@
-.navbar-lewagon {
+.funnel-display-text {
+  font-family: "Funnel Display", sans-serif;
+  font-weight: 600;
+}
+
+.logo img {
+  height: 50px;
+  max-width: 100%;
+}
+
+.navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background: #FFFCF5;
+  z-index: 1000;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-links {
+  font-family: "Funnel Display", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  color: #BABCE2;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #BABCE2;
+  padding: 10px 12px;
+  height: 40px;
+  line-height: 40px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a.sign-in-link {
+  color: #DFAEA0;
+}
+
+.nav-links a:hover {
+  background-color: #e0e0e0;
+  border-radius: 4px;
 }
