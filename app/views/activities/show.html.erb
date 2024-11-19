@@ -1,0 +1,7 @@
+<h1>Coucou c'est Jean Michel</h1>
+
+<p><%= @activity.name %></p>
+<p><%= @activity.description %></p>
+<p><%= @activity.price %> €</p>
+
+<%= link_to 'Booking' , new_activity_booking_path(@activity) %>

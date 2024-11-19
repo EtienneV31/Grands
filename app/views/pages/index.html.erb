@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url(<%= image_path("background-banner.jpg") %>);">
+  <div class="container">
+    <h1>Partagez un moment <br>d'émotion</h1>
+    <%# <p>Change your life and learn to code at one of our campuses around the world.</p> %>
+    <a class="btn btn-flat" href="/activities">Je découvre</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% 4.times do %>
+      <div class="col-md-3">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2>Title here</h2>
+              <p>Short description here!</p>
+            </div>
+            <h2 class="card-trip-pricing">£99.99</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
