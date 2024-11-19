@@ -15,11 +15,7 @@ User.destroy_all
 
 User.create!(
   email: "admin@admin.com",
-  password: "admin123"
-)
-
-
-User.create!(
+  password: "admin123",
   name: "Jean-Michel le Grincheux",
   description: "Expert en râleries. Idéal pour créer une ambiance de conflit léger dans vos soirées ou pour garder les voisins à distance.",
 )
