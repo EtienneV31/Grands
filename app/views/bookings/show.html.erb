@@ -1,6 +1,6 @@
 <h1>Your Booking</h1>
-<p><strong>Elder:</strong> <%= @booking.elder.name %></p>
+<p><strong>Activity:</strong> <%= @booking.activity.name %></p>
 <p><strong>Start Time:</strong> <%= @booking.start_time.strftime("%B %d, %Y %H:%M") %></p>
 <p><strong>End Time:</strong> <%= @booking.end_time.strftime("%B %d, %Y %H:%M") %></p>
-<p><strong>Total Price:</strong> $<%= @booking.total_price %></p>
+<p><strong>Total Price:</strong> $<%= @booking.activity.price %></p>
 <p><strong>Status:</strong> <%= @booking.status.capitalize %></p>
