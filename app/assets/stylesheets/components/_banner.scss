@@ -1,0 +1,50 @@
+.banner {
+  position: relative;
+  background-size: cover;
+  background-position: 30% 25%;
+  height: 50rem;
+  width: auto;
+  margin: auto;
+}
+
+
+/* Rectangle 13 */
+
+.banner h1 {
+  position: absolute;
+  left: 10%;
+  top: 46%;
+  line-height: 1em;
+  font-family: 'Funnel Display';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 6rem;
+  color: #FFFCF5;
+}
+
+/* Partagez un moment d’émotions. */
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner a {
+  background: #374375;
+  border-radius: 40px;
+  position: absolute;
+  width: 10em;
+  height: 2.5em;
+  left: 10%;
+  top: 76%;
+  font-family: 'Funnel Display';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #FFFCF5;
+  padding: 10px;
+}
