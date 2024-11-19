@@ -9,60 +9,102 @@
 #   end
 
 # Clean-up the DB
+
+
 User.destroy_all
-
-
+Activity.destroy_all
 
 User.create!(
   email: "admin@admin.com",
   password: "admin123",
   name: "Jean-Michel le Grincheux",
-  description: "Expert en râleries. Idéal pour créer une ambiance de conflit léger dans vos soirées ou pour garder les voisins à distance.",
+  description: "Expert en râleries. Idéal pour créer une ambiance de conflit léger dans vos soirées ou pour garder les voisins à distance."
 )
 
 User.create!(
-  name: "Ginette la Reine du Tricot",
-  description: "Peut tricoter un pull en moins de 24h tout en vous racontant les ragots de son immeuble. Garantie de ne jamais s’arrêter de parler.",
+  email: "lucie.positif@optimisme.com",
+  password: "lucie123",
+  name: "Lucie l'Éternelle Optimiste",
+  description: "Toujours un sourire en réserve, même sous la pluie. Parfaite pour remonter le moral ou accompagner vos défis personnels."
 )
 
 User.create!(
-  name: "Maurice le Champion de Belote",
-  description: "Vient avec son propre jeu de cartes et un talent inégalé pour tricher sans se faire attraper. Parfait pour animer vos dimanches.",
+  email: "georges.silencieux@zen.com",
+  password: "georges123",
+  name: "Georges le Silencieux",
+  description: "Un maître du silence et de la tranquillité. Apprécié pour son calme et son absence de questions inutiles."
 )
 
 User.create!(
-  name: "Suzanne la Mamie Rock'n'Roll",
-  description: "Fan de Led Zeppelin et de tatouages. Prête à faire des solos de guitare (invisible) et vous apprendre des pas de twist.",
+  email: "julie.cuisine@chefdujour.com",
+  password: "julie123",
+  name: "Julie la Chef Passionnée",
+  description: "Transforme des ingrédients simples en plats dignes d'un festin. Idéale pour vos dîners ou ateliers cuisine."
 )
 
 User.create!(
-  name: "Henri l’Ancien Cuisinier",
-  description: "Peut préparer un cassoulet qui mettra tout le monde d’accord, mais insiste pour utiliser sa propre poêle en fonte de 1942.",
+  email: "paul.curieux@exploration.com",
+  password: "paul123",
+  name: "Paul l'Aventurier Curieux",
+  description: "Toujours prêt à découvrir de nouveaux horizons et à partager ses trouvailles avec passion."
 )
 
 User.create!(
-  name: "Monique la Nostalgique",
-  description: "Passionnée par les récits d’avant 1960. Peut parler de 'la belle époque' pendant des heures. Idéal pour vos longues soirées pluvieuses.",
+  email: "claire.artistique@creativite.com",
+  password: "claire123",
+  name: "Claire la Créative",
+  description: "Visionnaire artistique capable de transformer le banal en extraordinaire. Idéale pour ajouter une touche artistique à vos projets."
 )
 
 User.create!(
-  name: "Roger le Jardinier Fou",
-  description: "Transformera votre pelouse en œuvre d’art… ou en chaos total, selon son humeur. Fournit ses propres outils rouillés.",
-)
-
-User.create!(
-  name: "Claudette la Grande Gueule",
-  description: "Parfaite pour des disputes fictives dans des lieux publics. Claudette maîtrise l’art de l’embarras social et des regards accusateurs.",
-)
-
-User.create!(
-  name: "Georgette la Mamie Gâteau",
-  description: "Arrive toujours avec des biscuits maison et des bonbons à la menthe. Parfait pour les goûters improvisés.",
-)
-
-User.create!(
-  name: "Albert le Collectionneur d’Horloges",
-  description: "Peut passer des heures à parler des horloges, des montres, et de tout ce qui fait tic-tac. Attention : sujet à débat sur le temps qui passe.",
+  email: "marc.tech@geek.com",
+  password: "marc123",
+  name: "Marc le Technophile",
+  description: "Toujours à la pointe des nouvelles technologies. Peut réparer votre ordinateur ou configurer votre maison connectée."
 )
 
 puts "#{User.count} elders created"
+
+Activity.create!(
+  name: "Râlerie de haut niveau",
+  description: "Jean-Michel vous offre une séance de râlerie de haut niveau. Idéal pour évacuer le stress et les tensions.",
+  price: 50,
+  user: User.first
+)
+
+Activity.create!(
+  name: "Atelier de cuisine créative",
+  description: "Lucie vous apprend à transformer des ingrédients simples en plats incroyables. Un moment de convivialité et de partage.",
+  price: 80,
+  user: User.second
+)
+
+Activity.create!(
+  name: "Séance de méditation silencieuse",
+  description: "Georges vous guide dans une séance de méditation pour atteindre une tranquillité intérieure. Un véritable havre de paix.",
+  price: 40,
+  user: User.third
+)
+
+Activity.create!(
+  name: "Randonnée en terres inconnues",
+  description: "Paul vous emmène à la découverte de paysages magnifiques et inexplorés. Aucune aventure ne ressemble à la précédente.",
+  price: 100,
+  user: User.fourth
+)
+
+Activity.create!(
+  name: "Atelier artistique expressif",
+  description: "Claire vous initie à l'art expressif en peinture, sculpture ou dessin. Libérez votre créativité dans une ambiance détendue.",
+  price: 70,
+  user: User.fifth
+)
+
+Activity.create!(
+  name: "Initiation aux nouvelles technologies",
+  description: "Marc vous montre comment utiliser les dernières innovations tech pour simplifier votre quotidien. Adapté à tous les niveaux.",
+  price: 60,
+  user: User.last
+)
+
+puts "#{Activity.count} activities created"
