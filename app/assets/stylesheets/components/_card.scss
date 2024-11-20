@@ -1,8 +1,25 @@
 .card-activities {
+  transition: filter 0.3s ease, transform 0.3s ease; /* Ajoute une transition pour un effet plus fluide */
+}
+
+.card-activities.blur {
+  filter: blur(5px); /* Applique un flou */
+}
+
+.card-activities:hover {
+  filter: none; /* Supprime le flou pour l'élément survolé */
+  transform: scale(1.2); /* Agrandit la carte de 1.2 fois */
+  box-shadow: 0 0 50px rgba(55, 67, 117, 0.5);
+
+}
+
+.card-activities {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
   border-radius: 27px;
+  cursor: pointer; /* Change le curseur en pointeur pour indiquer que l'élément est cliquable */
+
 }
 
 .card-activities > img {

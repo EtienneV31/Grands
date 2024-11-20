@@ -17,7 +17,7 @@
     <%# Mettre les cards dans le back ?? %>
       <% @activities.sample(4).each do |activity| %>
         <li class="col-md-3">
-          <div class="card-activities">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
             <%= cl_image_tag activity.photo.key %>
             <div class="card-activities-infos">
               <div>
@@ -44,8 +44,8 @@
            <%= cl_image_tag user.photo.key, class: "user__image" %>
             <div class="user__infos">
               <div>
-                <h2><%= user.name %>,  print age</h2>
-                <p>Empty champ moments</p>
+                <h2><%= user.name %>, <%= user.age %>ans </h2>
+                <p><%= user.moment %> moments ❤️</p>
               </div>
             </div>
           </div>
