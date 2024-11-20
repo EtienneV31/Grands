@@ -1,4 +1,4 @@
-<div  style="background-color: #F7EDEC">
+<div  style="background-color: #F7EDEC" class="home-page">
 
   <div class="banner" style="background-image: url(<%= image_path("background-banner.jpg") %>);">
     <div class="container">
@@ -15,16 +15,16 @@
     <ul class="row">
 
     <%# Mettre les cards dans le back ?? %>
-      <% @activities.each do |activity| %>
+      <% @activities.sample(4).each do |activity| %>
         <li class="col-md-3">
-          <div class="card-trip">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
             <%= cl_image_tag activity.photo.key %>
-            <div class="card-trip-infos">
+            <div class="card-activities-infos">
               <div>
                 <h2><%= activity.name %></h2>
                 <p><%= activity.description %></p>
               </div>
-              <%= cl_image_tag activity.user.photo.key, class: "card-trip-user avatar-bordered" %>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
             </div>
           </div>
         </li>
@@ -38,14 +38,14 @@
     </div>
 
     <ul class="top-users__list">
-      <% @users.each do |user| %>
+      <% @users.sample(6).each do |user| %>
         <li class="top-users__item">
           <div class="card-user">
            <%= cl_image_tag user.photo.key, class: "user__image" %>
             <div class="user__infos">
               <div>
-                <h2><%= user.name %>,  print age</h2>
-                <p>Empty champ moments</p>
+                <h2><%= user.name %>, <%= user.age %>ans </h2>
+                <p><%= user.moment %> moments ❤️</p>
               </div>
             </div>
           </div>
