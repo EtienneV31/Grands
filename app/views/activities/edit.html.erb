@@ -1,0 +1,9 @@
+<h1> Edit Activity </h1>
+
+<%= simple_form_for @activity do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Submit activity", class: "btn btn-primary" %>
+<% end %>
