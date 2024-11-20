@@ -1,35 +1,57 @@
-.searchbanner {
+.search-banner {
   background-color: #BABCE2;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-
+  padding-top: 15rem;
+  padding-bottom: 8rem;
   color: #374375;
 }
 
-.searchbanner h1 {
+.search-banner h1 {
+  font-family: "Funnel Display";
+  position: static;
+  font-weight: bolder;
+  color: #374375;
+  font-size: 70px;
+  padding-bottom: 2rem;
+}
+
+.search-banner p {
+  font-family: "Funnel Display";
+  position: static;
+  color: #EBEAF0;
+  font-size: 20px;
+}
+
+.search-banner h3 {
   position: static;
   color: #374375;
+  font-size: 20px;
+  padding-bottom: 2rem;
+  padding-left: 10px;
+  margin: O;
 }
 
 .form-container {
-  width: 75%;
-  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
   background-color: #EBEAF0;
   align-items: center;
-
   padding: 2rem;
-  margin-top: 2rem;
-
   backdrop-filter: blur(2px);
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .form-control {
-  width: 12rem;
-  border-radius: 10px;
-  padding: 2rem;
-
-  color: #BABCE2
+  background-color: #FFFCF5 ;
+  color: #BABCE2;
+  padding-top: 8px;
+  font-size: 20px;
+  width: 33.3rem;
+  border-radius: 17px;
+  height: 3rem;
+  text-anchor: middle;
+  margin-right: 20px;
 }
 
 .searchbanner h1 {
@@ -49,20 +71,26 @@
 }
 
 .search-form {
-  font-family: 'Funnel Display';
-  font-style: normal;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  font-style: normal;
+  font-family: "Avenir";
 }
 
 .search-button {
   background-color: #374375;
-  color: white;
-
+  font-weight: bolder;
+  color: #FFFCF5 ;
   width: 8rem;
+  border-radius: 15px;
+  height: 2.5rem;
+}
 
-  border-radius: 10px;
-  border: 1px solid #4a4a4a;
+.search-button :hover {
+  background-color: #FFFCF5 ;
+  font-weight: bolder;
+  color: #374375;
+  width: 8rem;
+  border-radius: 15px;
+  height: 2.5rem;
 }
