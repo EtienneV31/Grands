@@ -69,12 +69,11 @@ claire = User.new(
 claire.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_5.jpg")), filename: 'claire.jpg', content_type: 'image/jpg')
 claire.save
 
-puts "#{User.count} elders created"
-
 act_1 = Activity.new(
   name: "Râlerie de haut niveau",
   description: "Jean-Michel vous offre une séance de râlerie de haut niveau. Idéal pour évacuer le stress et les tensions.",
   price: 50,
+  address: "Toulouse",
   user: User.first
 )
 
@@ -85,6 +84,7 @@ act_2 = Activity.new(
   name: "Atelier de cuisine créative",
   description: "Lucie vous apprend à transformer des ingrédients simples en plats incroyables. Un moment de convivialité et de partage.",
   price: 80,
+  address: "Cugnaux",
   user: User.second
 )
 act_2.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/repas.jpeg")), filename: 'act_2.jpg', content_type: 'image/jpg')
@@ -94,6 +94,7 @@ act_3 = Activity.new(
   name: "Séance de méditation silencieuse",
   description: "Georges vous guide dans une séance de méditation pour atteindre une tranquillité intérieure. Un véritable havre de paix.",
   price: 40,
+  address: "Ramonville",
   user: User.third
 )
 act_3.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/blabla.jpg")), filename: 'act_3.jpg', content_type: 'image/jpg')
@@ -103,7 +104,13 @@ act_4 = Activity.create!(
   name: "Randonnée en terres inconnues",
   description: "Paul vous emmène à la découverte de paysages magnifiques et inexplorés. Aucune aventure ne ressemble à la précédente.",
   price: 100,
+  address: "Pibrac",
   user: User.fourth
 )
+
 act_4.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/balade.jpg")), filename: 'act_4.jpg', content_type: 'image/jpg')
 act_4.save
+
+
+puts "#{User.count} users created"
+puts "#{Activity.count} activities created"
