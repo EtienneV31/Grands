@@ -1,4 +1,4 @@
-<div  style="background-color: #F7EDEC">
+<div  style="background-color: #F7EDEC" class="home-page">
 
   <div class="banner" style="background-image: url(<%= image_path("background-banner.jpg") %>);">
     <div class="container">
@@ -15,27 +15,20 @@
     <ul class="row">
 
     <%# Mettre les cards dans le back ?? %>
-
-      <% cards = [
-          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
-          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
-          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
-          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
-        ] %>
-        <% cards.each do |card| %>
-          <li class="col-md-3">
-            <div class="card-trip">
-              <img src="<%= image_path(card[:image_path]) %>" />
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= card[:title] %></h2>
-                  <p><%= card[:description] %></p>
-                </div>
-                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
               </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
             </div>
-          </li>
-        <% end %>
+          </div>
+        </li>
+      <% end %>
     </ul>
   </div>
 
@@ -43,30 +36,23 @@
     <div class="top-users">
       <h2 class="top-users__title">Top users</h2>
     </div>
-    <% top_users = [
-          { name: "Alain", age: "82 ans", moments: "96 moments", top_user_image_path: "user_1.jpg" },
-        { name: "Marie", age: "75 ans", moments: "120 moments", top_user_image_path: "user_2.jpg" },
-        { name: "Jean", age: "78 ans", moments: "110 moments", top_user_image_path: "user_3.jpg" },
-        { name: "Lucie", age: "80 ans", moments: "105 moments", top_user_image_path: "user_4.jpg" },
-        { name: "Pierre", age: "85 ans", moments: "130 moments", top_user_image_path: "user_1.jpg" },
-        { name: "Sophie", age: "79 ans", moments: "115 moments", top_user_image_path: "user_2.jpg" },
-        ] %>
-        <ul class="top-users__list">
-    <% top_users.each do |user| %>
-      <li class="top-users__item">
-        <div class="card-user">
-          <img src="<%= image_path(user[:top_user_image_path]) %>" class="user__image"/>
-          <div class="user__infos">
-            <div>
-              <h2><%= user[:name] %>, <%= user[:age] %></h2>
-              <p><%= user[:moments] %></p>
+
+    <ul class="top-users__list">
+      <% @users.sample(6).each do |user| %>
+        <li class="top-users__item">
+          <div class="card-user">
+           <%= cl_image_tag user.photo.key, class: "user__image" %>
+            <div class="user__infos">
+              <div>
+                <h2><%= user.name %>,  print age</h2>
+                <p>Empty champ moments</p>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
 
 

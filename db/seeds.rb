@@ -10,60 +10,66 @@
 
 # Clean-up the DB
 
-
 User.destroy_all
 Activity.destroy_all
 
-User.create!(
+jm = User.new(
   email: "admin@admin.com",
   password: "admin123",
   name: "Jean-Michel le Grincheux",
   description: "Expert en râleries. Idéal pour créer une ambiance de conflit léger dans vos soirées ou pour garder les voisins à distance."
 )
 
-User.create!(
+jm.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_3.jpg")), filename: 'jean-michel.jpg', content_type: 'image/jpg')
+jm.save
+
+lucie = User.new(
   email: "lucie.positif@optimisme.com",
   password: "lucie123",
   name: "Lucie l'Éternelle Optimiste",
   description: "Toujours un sourire en réserve, même sous la pluie. Parfaite pour remonter le moral ou accompagner vos défis personnels."
 )
 
-User.create!(
+lucie.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_1.jpg")), filename: 'lucie.jpg', content_type: 'image/jpg')
+lucie.save
+
+georges = User.new(
   email: "georges.silencieux@zen.com",
   password: "georges123",
   name: "Georges le Silencieux",
   description: "Un maître du silence et de la tranquillité. Apprécié pour son calme et son absence de questions inutiles."
 )
 
-User.create!(
+georges.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_4.jpg")), filename: 'user.jpg', content_type: 'image/jpg')
+georges.save
+
+julie = User.new(
   email: "julie.cuisine@chefdujour.com",
   password: "julie123",
   name: "Julie la Chef Passionnée",
   description: "Transforme des ingrédients simples en plats dignes d'un festin. Idéale pour vos dîners ou ateliers cuisine."
 )
+julie.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_2.jpg")), filename: 'julie.jpg', content_type: 'image/jpg')
+julie.save
 
-User.create!(
+paul = User.new(
   email: "paul.curieux@exploration.com",
   password: "paul123",
   name: "Paul l'Aventurier Curieux",
   description: "Toujours prêt à découvrir de nouveaux horizons et à partager ses trouvailles avec passion."
 )
-
-User.create!(
+paul.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_4.jpg")), filename: 'paul.jpg', content_type: 'image/jpg')
+paul.save
+claire = User.new(
   email: "claire.artistique@creativite.com",
   password: "claire123",
   name: "Claire la Créative",
   description: "Visionnaire artistique capable de transformer le banal en extraordinaire. Idéale pour ajouter une touche artistique à vos projets."
 )
+claire.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_5.jpg")), filename: 'claire.jpg', content_type: 'image/jpg')
+claire.save
 
-User.create!(
-  email: "marc.tech@geek.com",
-  password: "marc123",
-  name: "Marc le Technophile",
-  description: "Toujours à la pointe des nouvelles technologies. Peut réparer votre ordinateur ou configurer votre maison connectée."
-)
-
-Activity.create!(
+act_1 = Activity.new(
   name: "Râlerie de haut niveau",
   description: "Jean-Michel vous offre une séance de râlerie de haut niveau. Idéal pour évacuer le stress et les tensions.",
   price: 50,
@@ -71,23 +77,30 @@ Activity.create!(
   user: User.first
 )
 
-Activity.create!(
+act_1.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/canape.jpg")), filename: 'act_1.jpg', content_type: 'image/jpg')
+act_1.save
+
+act_2 = Activity.new(
   name: "Atelier de cuisine créative",
   description: "Lucie vous apprend à transformer des ingrédients simples en plats incroyables. Un moment de convivialité et de partage.",
   price: 80,
   address: "Cugnaux",
   user: User.second
 )
+act_2.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/repas.jpeg")), filename: 'act_2.jpg', content_type: 'image/jpg')
+act_2.save
 
-Activity.create!(
+act_3 = Activity.new(
   name: "Séance de méditation silencieuse",
   description: "Georges vous guide dans une séance de méditation pour atteindre une tranquillité intérieure. Un véritable havre de paix.",
   price: 40,
   address: "Ramonville",
   user: User.third
 )
+act_3.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/blabla.jpg")), filename: 'act_3.jpg', content_type: 'image/jpg')
+act_3.save
 
-Activity.create!(
+act_4 = Activity.create!(
   name: "Randonnée en terres inconnues",
   description: "Paul vous emmène à la découverte de paysages magnifiques et inexplorés. Aucune aventure ne ressemble à la précédente.",
   price: 100,
@@ -95,21 +108,9 @@ Activity.create!(
   user: User.fourth
 )
 
-Activity.create!(
-  name: "Atelier artistique expressif",
-  description: "Claire vous initie à l'art expressif en peinture, sculpture ou dessin. Libérez votre créativité dans une ambiance détendue.",
-  price: 70,
-  address: "Colomiers",
-  user: User.fifth
-)
+act_4.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/balade.jpg")), filename: 'act_4.jpg', content_type: 'image/jpg')
+act_4.save
 
-Activity.create!(
-  name: "Initiation aux nouvelles technologies",
-  description: "Marc vous montre comment utiliser les dernières innovations tech pour simplifier votre quotidien. Adapté à tous les niveaux.",
-  price: 60,
-  address: "Blagnac",
-  user: User.last
-)
 
 puts "#{User.count} users created"
 puts "#{Activity.count} activities created"
