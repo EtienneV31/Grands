@@ -23,6 +23,26 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path, notice: 'Activity was successfully deleted.'
+  end
+
+  def edit
+    @activity = Activity.find(params[:id])
+
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      redirect_to activity_path, notice: 'Activity updated successfully!'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def activity_params
