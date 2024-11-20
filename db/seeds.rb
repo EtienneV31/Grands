@@ -63,12 +63,11 @@ User.create!(
   description: "Toujours à la pointe des nouvelles technologies. Peut réparer votre ordinateur ou configurer votre maison connectée."
 )
 
-puts "#{User.count} elders created"
-
 Activity.create!(
   name: "Râlerie de haut niveau",
   description: "Jean-Michel vous offre une séance de râlerie de haut niveau. Idéal pour évacuer le stress et les tensions.",
   price: 50,
+  address: "Toulouse",
   user: User.first
 )
 
@@ -76,6 +75,7 @@ Activity.create!(
   name: "Atelier de cuisine créative",
   description: "Lucie vous apprend à transformer des ingrédients simples en plats incroyables. Un moment de convivialité et de partage.",
   price: 80,
+  address: "Cugnaux",
   user: User.second
 )
 
@@ -83,6 +83,7 @@ Activity.create!(
   name: "Séance de méditation silencieuse",
   description: "Georges vous guide dans une séance de méditation pour atteindre une tranquillité intérieure. Un véritable havre de paix.",
   price: 40,
+  address: "Ramonville",
   user: User.third
 )
 
@@ -90,6 +91,7 @@ Activity.create!(
   name: "Randonnée en terres inconnues",
   description: "Paul vous emmène à la découverte de paysages magnifiques et inexplorés. Aucune aventure ne ressemble à la précédente.",
   price: 100,
+  address: "Pibrac",
   user: User.fourth
 )
 
@@ -97,6 +99,7 @@ Activity.create!(
   name: "Atelier artistique expressif",
   description: "Claire vous initie à l'art expressif en peinture, sculpture ou dessin. Libérez votre créativité dans une ambiance détendue.",
   price: 70,
+  address: "Colomiers",
   user: User.fifth
 )
 
@@ -104,7 +107,9 @@ Activity.create!(
   name: "Initiation aux nouvelles technologies",
   description: "Marc vous montre comment utiliser les dernières innovations tech pour simplifier votre quotidien. Adapté à tous les niveaux.",
   price: 60,
+  address: "Blagnac",
   user: User.last
 )
 
+puts "#{User.count} users created"
 puts "#{Activity.count} activities created"
