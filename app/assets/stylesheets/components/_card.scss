@@ -1,23 +1,29 @@
-.card-trip {
+.card-activities {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
   border-radius: 27px;
 }
 
-.card-trip > img {
+.card-activities > img {
   height: 300px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-trip h2 {
+.card-activities h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Nombre de lignes à afficher */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.card-trip p {
+.card-activities p {
   font-size: 16px;
   opacity: .7;
   margin: 0;
@@ -25,18 +31,25 @@
   font-family: 'Avenir Next';
   font-style: normal;
   font-weight: 400;
-  line-height: 12px;
+  line-height: 18px;
+  text-align: justify;
 
   color: rgb(55, 67, 117);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Nombre de lignes à afficher */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.card-trip-infos {
+.card-activities-infos {
   padding: 2rem;
   text-align: center;
   position: relative;
 }
 
-.card-trip-user {
+.card-activities-user {
   position: absolute;
   top: -50px;
   left: 50%;
@@ -52,13 +65,13 @@ margin-top: 3rem;
 margin-bottom: 8rem;
 }
 
-.container h2 {
-font-family: 'Funnel Display';
-font-style: normal;
-font-weight: 800;
-font-size: 1.5rem;
+.home-page h2 {
+  font-family: 'Funnel Display';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.5rem;
 
-color: #374375;
+  color: #374375;
 }
 
 .title2 {
