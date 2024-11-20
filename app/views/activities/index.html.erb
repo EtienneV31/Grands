@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="search-banner">
   <div class="container">
     <h1>Que recherchez-vous ?</h1>
     <h3>Trouvez l'activité qui vous ressemble !</h3>
@@ -7,8 +7,7 @@
       <%= form_with do |form| %>
         <div class="search-form">
             <%= form.label :city, class: "form-control" %>
-            <%= form.label :interest, class: "form-control" %>
-            <%= form.label :gender, class: "form-control" %>
+            <%= form.label :activity, class: "form-control" %>
             <%= form.submit "Search", class: "search-button btn" %>
         </div>
       </div>
@@ -17,11 +16,88 @@
   </div>
 </div>
 
-<% @activities.each do |activity| %>
-  <p><%= activity.name %></p>
-  <p><%= activity.description %></p>
-  <p><%= activity.price %> €</p>
-  <%= link_to 'Show', activity %>
-<% end %>
+<div class="menu-container">
+  <div class="menu-intrapage">
+        <ul>
+          <li>Liste</li>
+          <li>Map</li>
+        </ul>
+  </div>
+</div>
 
-<%= link_to 'New Activity', new_activity_path %>
+<ul class="row">
+     <% cards = [
+          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
+          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
+          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
+          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
+        ] %>
+        <% cards.each do |card| %>
+          <li class="col-md-3">
+            <div class="card-trip">
+              <img src="<%= image_path(card[:image_path]) %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= card[:title] %></h2>
+                  <p><%= card[:description] %></p>
+                </div>
+                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
+              </div>
+            </div>
+          </li>
+        <% end %>
+</ul>
+<div class="entre-menu">
+</div>
+<ul class="row">
+     <% cards = [
+          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
+          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
+          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
+          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
+        ] %>
+        <% cards.each do |card| %>
+          <li class="col-md-3">
+            <div class="card-trip">
+              <img src="<%= image_path(card[:image_path]) %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= card[:title] %></h2>
+                  <p><%= card[:description] %></p>
+                </div>
+                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
+              </div>
+            </div>
+          </li>
+        <% end %>
+</ul>
+<div class="entre-menu">
+</div>
+<ul class="row">
+     <% cards = [
+          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
+          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
+          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
+          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
+        ] %>
+        <% cards.each do |card| %>
+          <li class="col-md-3">
+            <div class="card-trip">
+              <img src="<%= image_path(card[:image_path]) %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= card[:title] %></h2>
+                  <p><%= card[:description] %></p>
+                </div>
+                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
+              </div>
+            </div>
+          </li>
+        <% end %>
+</ul>
+<div class="entre-menu">
+</div>
+
+<div class="button-contener">
+<%= link_to 'New Activity', new_activity_path, class: 'button-create' %>
+</div>
