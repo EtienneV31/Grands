@@ -2,7 +2,15 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity})
+      }
+    end
   end
+
 
   def new
     @activity = Activity.new
@@ -23,9 +31,29 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path, notice: 'Activity was successfully deleted.'
+  end
+
+  def edit
+    @activity = Activity.find(params[:id])
+
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      redirect_to activity_path, notice: 'Activity updated successfully!'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :price, :photo)
+    params.require(:activity).permit(:name, :description, :price, :photo, :address)
   end
 end
