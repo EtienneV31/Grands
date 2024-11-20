@@ -1,0 +1,43 @@
+.booking_button {
+  font-weight: 700;
+  font-size: 30px;
+
+  margin: 2rem auto;
+
+  padding: 5px;
+  width: 90%;
+
+  background-color: #374375;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+
+  border-radius: 72px;
+  border: 1px solid #4a4a4a;
+}
+
+.booking_button p {
+  padding: 10px;
+  margin-left: 1rem;
+  margin-bottom: 0;
+}
+
+.booking-btn {
+  all: unset;
+
+  font-size: 24px;
+
+  margin: 10px;
+  margin-right: 1rem;
+  padding: 0.5rem;
+
+  width: 9rem;
+
+  color: #374375;
+  background-color: #FFFCF5;
+
+  border-radius: 48px;
+  text-align: center;
+}
