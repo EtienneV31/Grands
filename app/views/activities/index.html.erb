@@ -24,94 +24,75 @@
         </ul>
   </div>
 </div>
+<div class="home-page">
+    <ul class="row">
 
-<ul class="row">
-     <% cards = [
-          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
-          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
-          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
-          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
-        ] %>
-        <% cards.each do |card| %>
-          <li class="col-md-3">
-            <div class="card-trip">
-              <img src="<%= image_path(card[:image_path]) %>" />
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= card[:title] %></h2>
-                  <p><%= card[:description] %></p>
-                </div>
-                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
+    <%# Mettre les cards dans le back ?? %>
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
               </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
             </div>
-          </li>
-        <% end %>
-</ul>
-<div class="entre-menu">
-</div>
-<ul class="row">
-     <% cards = [
-          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
-          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
-          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
-          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
-        ] %>
-        <% cards.each do |card| %>
-          <li class="col-md-3">
-            <div class="card-trip">
-              <img src="<%= image_path(card[:image_path]) %>" />
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= card[:title] %></h2>
-                  <p><%= card[:description] %></p>
-                </div>
-                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
-              </div>
-            </div>
-          </li>
-        <% end %>
-</ul>
-<div class="entre-menu">
-</div>
-<ul class="row">
-     <% cards = [
-          { image_path: "balade.jpg", title: "Balade matinale", description: "Beautiful Greece!", user_image_path: "user_1.jpg" },
-          { image_path: "blabla.jpg", title: "Moment de partage", description: "Moment de partage", user_image_path: "user_2.jpg" },
-          { image_path: "canape.jpg", title: "Spain", description: "Sunny Spain!", user_image_path: "user_3.jpg" },
-          { image_path: "repas.jpg", title: "France", description: "Romantic France!", user_image_path: "user_4.jpg" }
-        ] %>
-        <% cards.each do |card| %>
-          <li class="col-md-3">
-            <div class="card-trip">
-              <img src="<%= image_path(card[:image_path]) %>" />
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= card[:title] %></h2>
-                  <p><%= card[:description] %></p>
-                </div>
-                <img src="<%= image_path(card[:user_image_path]) %>" class="card-trip-user avatar-bordered" />
-              </div>
-            </div>
-          </li>
-        <% end %>
-</ul>
-<div class="entre-menu">
-</div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
 
+<div class="entre-menu">
+</div>
+    <ul class="row">
+
+    <%# Mettre les cards dans le back ?? %>
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
+              </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+<div class="entre-menu">
+</div>
+    <ul class="row">
+
+    <%# Mettre les cards dans le back ?? %>
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
+              </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+<div class="entre-menu">
+</div>
+</div>
 <div class="button-contener">
 <%= link_to 'New Activity', new_activity_path, class: 'button-create' %>
 </div>
-<% @activities.each do |activity| %>
-  <p><%= activity.name %></p>
-  <p><%= activity.description %></p>
-  <p><%= activity.price %> €</p>
-  <p><%= activity.address %> €</p>
-  <%= link_to 'Show', activity %>
-<% end %>
+
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-<%= link_to 'New Activity', new_activity_path %>
