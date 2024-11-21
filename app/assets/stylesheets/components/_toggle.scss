@@ -1,28 +1,17 @@
-.toggle-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.toggle-menu li {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-}
-
-.toggle-menu li.active {
-  background-color: #007bff;
-  color: white;
-}
 
 .hidden {
   display: none; /* Cache la div */
 }
-// .content-section {
-//   display: none;
-// }
 
-// .content-section.active {
-//   display: block;
-// }
+.btn-toggle {
+  // border: solid 2px #B9BCE2;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-toggle:hover {
+  background-color: #B9BCE2;
+  color: #F4F4F4;
+  cursor: pointer;
+}
