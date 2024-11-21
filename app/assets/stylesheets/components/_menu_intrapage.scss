@@ -56,17 +56,18 @@
 .button-create {
   background-color: #DFAEA0;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 23px;
   color: #FFFCF5 ;
   text-align: center;
-  padding: 0px;
-  padding-top: 3px;
+  padding-top: 15px;
   padding-right: 20px;
   padding-left: 20px;
-  border-radius: 20px;
-  height: 2.5rem;
+  border-radius: 18px;
+  height: 4rem;
+  width: 13rem;
   text-decoration: none;
   margin: 0 auto;
+  box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
 }
 
 .button-create a {
@@ -75,5 +76,5 @@
 
 .button-create :hover {
   background-color: #FFFCF5 ;
-  color: #DFAEA0 ;
+  color: #DFAEA0;
 }

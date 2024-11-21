@@ -12,7 +12,6 @@
         </div>
       <% end %>
     </div>
-
   </div>
 </div>
 
@@ -24,14 +23,12 @@
         </ul>
   </div>
 </div>
-<div class="home-page">
-    <ul class="row">
-
-    <%# Mettre les cards dans le back ?? %>
-      <% @activities.sample(4).each do |activity| %>
-        <li class="col-md-3">
-          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
-            <%= cl_image_tag activity.photo.key %>
+<div class="home-page" style="margin: 30px">
+  <ul class="row">
+    <% @activities.sample(12).each do |activity| %>
+      <li class="col-md-3">
+        <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+          <%= cl_image_tag activity.photo.key %>
             <div class="card-activities-infos">
               <div>
                 <h2><%= activity.name %></h2>
@@ -39,55 +36,12 @@
               </div>
               <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
             </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-
-<div class="entre-menu">
+        </div>
+       </li>
+    <% end %>
+  </ul>
 </div>
-    <ul class="row">
-
-    <%# Mettre les cards dans le back ?? %>
-      <% @activities.sample(4).each do |activity| %>
-        <li class="col-md-3">
-          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
-            <%= cl_image_tag activity.photo.key %>
-            <div class="card-activities-infos">
-              <div>
-                <h2><%= activity.name %></h2>
-                <p><%= activity.description %></p>
-              </div>
-              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-<div class="entre-menu">
-</div>
-    <ul class="row">
-
-    <%# Mettre les cards dans le back ?? %>
-      <% @activities.sample(4).each do |activity| %>
-        <li class="col-md-3">
-          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
-            <%= cl_image_tag activity.photo.key %>
-            <div class="card-activities-infos">
-              <div>
-                <h2><%= activity.name %></h2>
-                <p><%= activity.description %></p>
-              </div>
-              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
-            </div>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-<div class="entre-menu">
-</div>
-</div>
-<div class="button-contener">
+<div class="button-contener" style="margin-top: 100px">
 <%= link_to 'New Activity', new_activity_path, class: 'button-create' %>
 </div>
 
