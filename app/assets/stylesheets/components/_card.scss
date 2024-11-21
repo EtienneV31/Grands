@@ -15,7 +15,7 @@
 
 .card-activities {
   overflow: hidden;
-  background: white;
+  background: #FFFCF5;
   box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
   border-radius: 27px;
   cursor: pointer; /* Change le curseur en pointeur pour indiquer que l'élément est cliquable */
@@ -74,7 +74,7 @@
   transform: translateX(-50%);
   width: 5rem; /* Largeur fixe */
   height: 5rem; /* Hauteur fixe */
-  border: solid 6px white;
+  border: solid 6px #FFFCF5;
   object-fit: cover; /* Maintient les proportions de l'image */
 }
 
