@@ -5,23 +5,26 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); // Fond semi-transparent
+  background-color: rgba(55, 67, 117, 0.5); // Fond semi-transparent
   display: none; // Cachée par défaut
   z-index: 1000;
 
   .modal-content {
     position: relative;
-    background: #fff;
+    background: #374375;
     margin: 10% auto; // Centré verticalement
-    padding: 20px;
+    padding: 100px;
     width: 40%; // Largeur de la modale
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
     animation: fadeIn 0.3s ease-in-out; // Animation d'apparition
 
     h2 {
       margin-top: 0;
-      color: #333;
+      margin-bottom: 3rem;
+      font-family: 'Funnel Display';
+      font-weight: bolder;
+      color: #FFFCF5;
     }
 
     .close {
@@ -30,11 +33,11 @@
       right: 15px;
       font-size: 24px;
       font-weight: bold;
-      color: #999;
+      color: #FFFCF5;
       cursor: pointer;
 
       &:hover {
-        color: #333;
+        color: #BABCE2;
       }
     }
 
@@ -43,9 +46,8 @@
 
       label {
         display: block;
-        font-weight: bold;
         margin-bottom: 5px;
-        color: #555;
+        color: #FFFCF5;
       }
 
       input,
@@ -53,27 +55,30 @@
         width: 100%;
         padding: 10px;
         border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 14px;
+        border-radius: 7px;
+        font-size: 20px;
+        font-weight: bold;
 
         &:focus {
-          border-color: #007bff;
+          border-color: #BABCE2;
           outline: none;
         }
       }
     }
 
     .btn {
-      background-color: #007bff;
-      color: #fff;
+      background-color: #BABCE2;
+      color: #FFFCF5;
       border: none;
-      padding: 10px 15px;
+      padding: 10px 10px;
       font-size: 16px;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 8px;
+      margin-top: 1.5rem;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: #FFFCF5;
+        color: #374375;
       }
     }
   }
