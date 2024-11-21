@@ -1,4 +1,4 @@
-<div class="searchbanner">
+<div class="search-banner">
   <div class="container">
     <h1>Que recherchez-vous ?</h1>
     <h3>Trouvez l'activité qui vous ressemble !</h3>
@@ -7,8 +7,7 @@
       <%= form_with do |form| %>
         <div class="search-form">
             <%= form.label :city, class: "form-control" %>
-            <%= form.label :interest, class: "form-control" %>
-            <%= form.label :gender, class: "form-control" %>
+            <%= form.label :activity, class: "form-control" %>
             <%= form.submit "Search", class: "search-button btn" %>
         </div>
       </div>
@@ -17,17 +16,83 @@
   </div>
 </div>
 
-<% @activities.each do |activity| %>
-  <p><%= activity.name %></p>
-  <p><%= activity.description %></p>
-  <p><%= activity.price %> €</p>
-  <p><%= activity.address %> €</p>
-  <%= link_to 'Show', activity %>
-<% end %>
+<div class="menu-container">
+  <div class="menu-intrapage">
+        <ul>
+          <li>Liste</li>
+          <li>Map</li>
+        </ul>
+  </div>
+</div>
+<div class="home-page">
+    <ul class="row">
+
+    <%# Mettre les cards dans le back ?? %>
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
+              </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+
+<div class="entre-menu">
+</div>
+    <ul class="row">
+
+    <%# Mettre les cards dans le back ?? %>
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
+              </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+<div class="entre-menu">
+</div>
+    <ul class="row">
+
+    <%# Mettre les cards dans le back ?? %>
+      <% @activities.sample(4).each do |activity| %>
+        <li class="col-md-3">
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+            <%= cl_image_tag activity.photo.key %>
+            <div class="card-activities-infos">
+              <div>
+                <h2><%= activity.name %></h2>
+                <p><%= activity.description %></p>
+              </div>
+              <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+<div class="entre-menu">
+</div>
+</div>
+<div class="button-contener">
+<%= link_to 'New Activity', new_activity_path, class: 'button-create' %>
+</div>
+
 
 <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-<%= link_to 'New Activity', new_activity_path %>

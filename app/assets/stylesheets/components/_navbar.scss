@@ -1,28 +1,32 @@
 .funnel-display-text {
   font-family: 'Funnel Display', sans-serif;
   font-weight: 600;
-}
+ }
 
-.logo img {
+
+ .logo img {
   height: 50px;
   max-width: 100%;
-  padding-left: 1rem;
-}
+  padding-left: 6px;
+  margin-top: 0.3rem;
+ }
 
-.navbar {
+
+ .navbar {
   position: relative;
   top: 0;
   left: 0;
   margin-top: -20px;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   background: #FFFCF5;
-  padding: 0;
-}
+ }
 
-.nav-links {
+
+ .nav-links {
   font-family: "Funnel Display", sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -33,31 +37,35 @@
   color: #BABCE2;
   margin: 0;
   padding: 0;
-  // margin-top: 1.5rem;
-}
+  margin-top: 0.3rem;
+ }
 
-.nav-links li {
+
+ .nav-links li {
   display: inline-block;
-}
+ }
 
-.nav-links a {
+
+ .nav-links ul {
+  margin: 0;
+ }
+
+
+ .nav-links a {
   text-decoration: none;
   color: #BABCE2;
-  padding: 10px 12px;
+  padding: 0 12px;
   height: 40px;
   line-height: 40px;
-  transition: background-color 0.3s;
-}
+ }
 
-.nav-links a.sign-in-link {
+
+ .nav-links a.sign-in-link {
   color: #DFAEA0;
-}
+ }
 
-.nav-links a:hover {
+
+ .nav-links a:hover {
   background-color: #e0e0e0;
   border-radius: 4px;
-}
-
-.nav-links ul {
-  margin-bottom: 0;
-}
+ }

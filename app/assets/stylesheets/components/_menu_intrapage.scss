@@ -1,0 +1,79 @@
+.menu-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.entre-menu {
+ height: 3rem;
+ justify-content: center;
+}
+.menu-intrapage {
+  font-family:'Funnel Display';
+  font-weight: bolder;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  color: #BABCE2;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  text-decoration: none;
+}
+
+.menu-intrapage li {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.menu-intrapage ul {
+  margin: 0;
+ }
+
+.menu-intrapage a {
+  text-decoration: none;
+  padding: 0 12px;
+  height: 40px;
+  line-height: 40px;
+ }
+
+.menu-intrapage a:hover {
+  color: #374375;;
+ }
+
+.button-contener {
+ display: flex;
+ justify-items: center;
+ margin-bottom: 3rem;
+}
+
+.button-create {
+  background-color: #DFAEA0;
+  font-weight: bolder;
+  font-size: 20px;
+  color: #FFFCF5 ;
+  text-align: center;
+  padding: 0px;
+  padding-top: 3px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 20px;
+  height: 2.5rem;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.button-create a {
+ text-decoration: none;
+}
+
+.button-create :hover {
+  background-color: #FFFCF5 ;
+  color: #DFAEA0 ;
+}
