@@ -1,0 +1,17 @@
+
+.hidden {
+  display: none; /* Cache la div */
+}
+
+.btn-toggle {
+  // border: solid 2px #B9BCE2;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-toggle:hover {
+  background-color: #B9BCE2;
+  color: #F4F4F4;
+  cursor: pointer;
+}

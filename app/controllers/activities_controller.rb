@@ -2,6 +2,17 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+
+    if params[:city].present?
+      sql_query = "address ILIKE ?"
+      @activities = @activities.where(sql_query, "%#{params[:city]}%")
+    end
+
+    if params[:name].present?
+      sql_query = "name ILIKE ?"
+      @activities = @activities.where(sql_query, "%#{params[:name]}%")
+    end
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
