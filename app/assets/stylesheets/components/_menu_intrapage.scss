@@ -68,13 +68,14 @@
   text-decoration: none;
   margin: 0 auto;
   box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
+
+  &:hover {
+    background-color: #FFFCF5;
+    color: #DFAEA0;;
+  }
 }
 
 .button-create a {
- text-decoration: none;
-}
+  text-decoration: none;
 
-.button-create :hover {
-  background-color: #FFFCF5 ;
-  color: #DFAEA0;
 }
