@@ -86,9 +86,9 @@ input.create-control::file-selector-button {
   border-radius: 17px;
   height: 3rem;
   width: 13rem;
-}
 
-.create-button :hover {
-  background-color: #FFFCF5 ;
-  color: #DFAEA0;
+  &:hover {
+    background-color: #FFFCF5;
+    color: #DFAEA0;;
+  }
 }
