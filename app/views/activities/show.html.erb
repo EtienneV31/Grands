@@ -1,5 +1,6 @@
 <p><%= @activity.name %></p>
 <p><%= @activity.description %></p>
+<p><%= @activity.address%></p>
 <p><%= @activity.price %> €</p>
 <% if @activity.photo.attached? %>
   <%= cl_image_tag @activity.photo.key, height: 300, width: 400, crop: :fill %>
