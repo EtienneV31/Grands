@@ -1,11 +1,19 @@
-footer {
-  bottom: 0;
-  left: 0;
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+
   background-color: #BABCE2;
   padding-top: 2px;
   padding-bottom: 1px;
   padding-left: 10px;
   padding-right: 10px;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,16 +26,16 @@ footer {
   gap: 20px;
 }
 
-footer a {
+.footer a {
   color: #FFFCF5;
   font-size: 30px;
 }
 
-footer a:hover {
+.footer a:hover {
   color: #FFFFFF;
   opacity: 0.8;
 }
-footer div.footer-text {
+.footer div.footer-text {
   font-family: 'Funnel Display', sans-serif;
   color: #FFFCF5;
 }
