@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :show]
+
+  resource :profile, only: [:show]
 end
