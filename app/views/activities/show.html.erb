@@ -18,8 +18,8 @@
 
     <div class="profile-content-container">
       <div class="button-container">
-        <%= link_to 'Edit', edit_activity_path(@activity), class: 'btn' %>
-        <%= link_to 'Delete', activity_path(@activity), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn' %>
+        <%= link_to 'Edit', edit_activity_path(@activity), class: 'click-edit' %>
+        <%= link_to 'Delete', activity_path(@activity), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'click-delete' %>
       </div>
       <h1 class="activity-name-show"><%= @activity.name %></h1>
       <div class = "infos-activity-show" style = "display-flex">
@@ -35,6 +35,6 @@
 </div>
 
 <div class= "booking_button">
-  <p><%= @activity.price %> €/jour</p>
+  <p><%= @activity.price %>€ /jour</p>
   <%= link_to 'Reserver', new_activity_booking_path(@activity), class: "btn booking-btn" %>
 </div>
