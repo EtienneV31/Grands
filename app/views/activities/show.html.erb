@@ -11,7 +11,48 @@
 <%= link_to 'Delete', activity_path(@activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 <%= link_to 'Edit', edit_activity_path(@activity) %>
 
-<div class= "booking_button">
+
+<!-- Section de la modale (invisible par défaut) -->
+<div id="bookingModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Réservation pour <%= @activity.name %></h2>
+    <%= simple_form_for [@activity, @activity.bookings.build], html: { data: { controller: 'flatpickr' }, class: 'form' } do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
+      <div class="form-group">
+        <%= f.input :start_time,
+            as: :string,
+            label: "Date de début",
+            required: true,
+            input_html: {
+              data: {
+                flatpickr_target: 'startDateInput',
+              }
+            } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :end_time,
+              as: :string,
+              label: "Date de fin",
+              required: true,
+              input_html: {
+                data: {
+                  flatpickr_target: 'endDateInput'
+                }
+              } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Confirmer", class: "btn confirm-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="booking_button">
   <p><%= @activity.price %> €/jour</p>
-  <%= link_to 'Reserver', new_activity_booking_path(@activity), class: "btn booking-btn" %>
+  <button class="btn booking-btn" id="openModal">Réserver</button>
 </div>
