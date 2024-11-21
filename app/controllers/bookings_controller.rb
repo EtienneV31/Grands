@@ -5,6 +5,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def index
+    @bookings = Booking.all
+    @bookings = @bookings.where(user_id: current_user.id)
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
