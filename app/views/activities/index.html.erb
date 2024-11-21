@@ -4,52 +4,53 @@
     <h3>Trouvez l'activité qui vous ressemble !</h3>
 
     <div class="form-container">
-      <%= form_with do |form| %>
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
         <div class="search-form">
-            <%= form.label :city, class: "form-control" %>
-            <%= form.label :activity, class: "form-control" %>
-            <%= form.submit "Search", class: "search-button btn" %>
+          <%= text_field_tag :city, params[:city], class: "form-control", placeholder: "City" %>
+          <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "Activity" %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         </div>
-      </div>
-    <% end %>
-
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div data-controller="toggle">
-  <div class="menu-container toggle-menu" >
-    <ul>
-      <li data-action="click->toggle#showList" data-toggle-target="list" class="active">Liste</li>
-      <li data-action="click->toggle#showMap" data-toggle-target="map">Map</li>
-    </ul>
-  </div>
 
-  <div class="home-page">
+<div data-controller="toggle">
+  <div class="menu-container">
+    <div class="menu-intrapage">
+      <ul>
+        <li data-action="click->toggle#showList" data-toggle-target="list" class="active">Liste</li>
+        <li data-action="click->toggle#showMap" data-toggle-target="map">Map</li>
+      </ul>
+    </div>
+  </div>
+  <div class="home-page" style="margin: 30px">
     <div data-toggle-target="activities" class="content-section">
-      <ul data-toggle-target="test" class="row">
-        <% @activities.sample(4).each do |activity| %>
+      <ul class="row">
+        <% @activities.sample(12).each do |activity| %>
           <li class="col-md-3">
-            <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
-              <%= cl_image_tag activity.photo.key %>
-              <div class="card-activities-infos">
-                <div>
-                  <h2><%= activity.name %></h2>
-                  <p><%= activity.description %></p>
-                </div>
-                <%= cl_image_tag activity.user.photo.key, class: "card-activities-user avatar-bordered" %>
-              </div>
-            </div>
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+          <%= cl_image_tag activity.photo.key %>
+           <div class="card-activities-infos">
+             <div>
+              <h2><%= activity.name %></h2>
+              <p><%= activity.description %></p>
+             </div>
+           </div>
+          </div>  
           </li>
         <% end %>
       </ul>
     </div>
-
-    <div data-toggle-target="mapSection" class="content-section hidden" style="width: 100%; height: 600px;">
-      <h1>Je suis actif</h1>
-    </div>
   </div>
+
+  <div data-toggle-target="mapSection" class="content-section hidden" style="width: 100%; height: 600px;">
+    <h1>Je suis actif</h1>
+  </div>
+ 
 </div>
 
-<div class="button-contener">
-  <%= link_to 'New Activity', new_activity_path, class: 'button-create' %>
+<div class="button-contener" style="margin-top: 100px">
+<%= link_to 'New Activity', new_activity_path, class: 'button-create' %>
 </div>
