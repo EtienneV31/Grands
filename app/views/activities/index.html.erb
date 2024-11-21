@@ -4,14 +4,14 @@
     <h3>Trouvez l'activité qui vous ressemble !</h3>
 
     <div class="form-container">
-      <%= form_with do |form| %>
+      <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
         <div class="search-form">
-            <%= form.label :city, class: "form-control" %>
-            <%= form.label :activity, class: "form-control" %>
-            <%= form.submit "Search", class: "search-button btn" %>
+          <%= text_field_tag :city, params[:city], class: "form-control", placeholder: "City" %>
+          <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "Activity" %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
 
   </div>
 </div>
