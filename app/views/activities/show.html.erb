@@ -1,82 +1,89 @@
-
-<div class="profile-container">
-  <div class="profile-banner">
-    <div class="profile-img">
-      <% if @activity.photo.attached? %>
-        <%= cl_image_tag @activity.photo.key, height: 600, width: 1500, crop: :fill %>
-      <% else %>
-        <p>Aucune image disponible pour cette activité.</p>
-      <% end %>
-    </div>
-
-    <div class="show-avatar-container">
-      <% if @activity.user.photo.attached? %>
-        <%= cl_image_tag @activity.user.photo.key, class: "avatar-img" %>
-      <% else %>
-        <p>Aucune image disponible pour cet utilisateur.</p>
-      <% end %>
-    </div>
-
-    <div class="profile-content-container">
-      <div class="button-container">
-        <%= link_to 'Edit', edit_activity_path(@activity), class: 'click-edit' %>
-        <%= link_to 'Delete', activity_path(@activity), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'click-delete' %>
+<div style="background-color: #F7EDEC">
+  <div class="profile-container">
+    <div class="profile-banner">
+      <div class="profile-img">
+        <% if @activity.photo.attached? %>
+          <%= cl_image_tag @activity.photo.key, height: 600, width: 1500, crop: :fill %>
+        <% else %>
+          <p>Aucune image disponible pour cette activité.</p>
+        <% end %>
       </div>
-      <h1 class="activity-name-show"><%= @activity.name %></h1>
-      <div class = "infos-activity-show" style = "display-flex">
-        <p class="activity-description-show "><%= @activity.description %></p>
+
+      <div class="show-avatar-container">
+        <% if @activity.user.photo.attached? %>
+          <%= cl_image_tag @activity.user.photo.key, class: "avatar-img" %>
+        <% else %>
+          <p>Aucune image disponible pour cet utilisateur.</p>
+        <% end %>
       </div>
-      <div class= "infos-user-show">
-        <p><%= @activity.user.name %> </p>
-        <p><%= @activity.user.age %>ans </p>
+
+      <div class="profile-content-container">
+        <div class="button-container">
+          <%= link_to 'Edit', edit_activity_path(@activity), class: 'click-edit' %>
+          <%= link_to 'Delete', activity_path(@activity), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'click-delete' %>
+        </div>
+        <h1 class="activity-name-show"><%= @activity.name %></h1>
+        <div class = "infos-activity-show" style = "display-flex">
+          <p class="activity-description-show "><%= @activity.description %></p>
+        </div>
+        <div class= "infos-user-show">
+          <p><%= @activity.user.name %> </p>
+          <p><%= @activity.user.age %> ans </p>
+          <p><%= @activity.address %> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="profile-details">
+    <div class="map-profile">
+      <div class= "infos-address-show">
+        <h2>Adresse</h2>
         <p><%= @activity.address %> </p>
       </div>
+      <div class= "infos-map-show">
+      </div>
+    </div>
+  <!-- Section de la modale (invisible par défaut) -->
+    <div id="bookingModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Réservation pour <%= @activity.name %></h2>
+        <%= simple_form_for [@activity, @activity.bookings.build], html: { data: { controller: 'flatpickr' }, class: 'form' } do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+
+          <div class="form-group">
+            <%= f.input :start_time,
+                as: :string,
+                label: "Date de début",
+                required: true,
+                input_html: {
+                  data: {
+                    flatpickr_target: 'startDateInput',
+                  }
+                } %>
+          </div>
+
+          <div class="form-group">
+            <%= f.input :end_time,
+                  as: :string,
+                  label: "Date de fin",
+                  required: true,
+                  input_html: {
+                    data: {
+                      flatpickr_target: 'endDateInput'
+                    }
+                  } %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Confirmer", class: "btn confirm-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="booking_button">
+      <p><%= @activity.price %> €/jour</p>
+      <button class="btn booking-btn" id="openModal">Réserver</button>
     </div>
   </div>
-</div>
-
-
-<!-- Section de la modale (invisible par défaut) -->
-<div id="bookingModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Réservation pour <%= @activity.name %></h2>
-    <%= simple_form_for [@activity, @activity.bookings.build], html: { data: { controller: 'flatpickr' }, class: 'form' } do |f| %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-
-      <div class="form-group">
-        <%= f.input :start_time,
-            as: :string,
-            label: "Date de début",
-            required: true,
-            input_html: {
-              data: {
-                flatpickr_target: 'startDateInput',
-              }
-            } %>
-      </div>
-
-      <div class="form-group">
-        <%= f.input :end_time,
-              as: :string,
-              label: "Date de fin",
-              required: true,
-              input_html: {
-                data: {
-                  flatpickr_target: 'endDateInput'
-                }
-              } %>
-      </div>
-
-      <div class="form-group">
-        <%= f.submit "Confirmer", class: "btn confirm-btn" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
-<div class="booking_button">
-  <p><%= @activity.price %> €/jour</p>
-  <button class="btn booking-btn" id="openModal">Réserver</button>
 </div>
