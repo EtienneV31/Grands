@@ -2,7 +2,7 @@
   background-color: #374375;
   padding-top: 10rem;
   padding-bottom: 5rem;
-  height: 60rem;
+  height: 20rem;
   color: #FFFCF5;
 }
 
@@ -35,13 +35,21 @@
 }
 
 .booking-index-cards h2 {
-  font-family: 'Funnel Display';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 1.3rem;
+  font-family: "Funnel Display";
+  font-weight: bolder;
+  color: #374375;
+  font-size: 30px;
+  margin: 0;
+  padding-bottom: 2.5rem;
+}
+
+.booking-index-cards h3 {
+  font-family: "Funnel Display";
+  font-weight: bolder;
+  color: #374375;
+  font-size: 36px;
 
   padding-top: 5rem;
-  padding-left: 8rem;
-
-  color: #374375;
+  margin-left: 7rem;
+  margin-bottom: 7rem;
 }

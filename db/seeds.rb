@@ -82,7 +82,6 @@ claire = User.new(
 claire.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_5.jpg")), filename: 'claire.jpg', content_type: 'image/jpg')
 claire.save
 
-puts "#{User.count} users created"
 
 act_1 = Activity.new(
   name: "Râlerie de haut niveau",
@@ -180,7 +179,7 @@ act_10 = Activity.create!(
   name: "Course de brouettes costumées",
   description: "Claire vous invite à participer à une course délirante où chaque équipe customise sa brouette avant de la propulser sur un parcours farfelu.",
   price: 50,
-  address: "Albi",
+  address: "Plaisance-du-Touch",
   user: User.second
 )
 act_10.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/brouette.jpg")), filename: 'act_10.jpg', content_type: 'image/jpg')
@@ -206,8 +205,7 @@ act_12 = Activity.create!(
 act_12.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/dance.jpg")), filename: 'act_12.jpg', content_type: 'image/jpg')
 act_12.save
 
-puts "#{User.count} users created"
-puts "#{Activity.count} activities created"
+
 
 booking_1 = Booking.create!(
   user: User.first,
@@ -236,9 +234,11 @@ booking_3 = Booking.create!(
 booking_4 = Booking.create!(
   user: User.fourth,
   activity: Activity.fourth,
-  start_time: DateTime.new(2024, 12, 25, 0, 0),
-  end_time: DateTime.new(2024, 12, 26, 0, 0),
+  start_time: DateTime.new(2023, 12, 25, 0, 0),
+  end_time: DateTime.new(2023, 12, 26, 0, 0),
   status: 0
 )
 
-puts "#{Booking.count} activities created"
+puts "#{Booking.count} bookings created"
+puts "#{User.count} users created"
+puts "#{Activity.count} activities created"
