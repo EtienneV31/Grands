@@ -9,6 +9,8 @@
   max-width: 100%;
   padding-left: 6px;
   margin-top: 0.3rem;
+
+  margin-left: 20px;
  }
 
 
@@ -62,10 +64,15 @@
 
  .nav-links a.profile-link {
   color: #DFAEA0;
+  margin-right: 20px;
  }
 
 
  .nav-links a:hover {
-  background-color: #e0e0e0;
-  border-radius: 4px;
+  color: #374375
+ }
+
+
+ .nav-links a.profile-link:hover {
+  color: #89525A
  }
