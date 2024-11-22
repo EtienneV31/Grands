@@ -1,7 +1,29 @@
-.mapboxgl-ctrl-geocoder {
-  max-width: none;
+.activity-form-address-autocomplete .mapboxgl-ctrl-geocoder {
+  background-color: #FFFCF5;
+  color: #DFAEA0;
+  padding-top: 8px;
+  font-size: 20px;
+  border-radius: 20px;
+  height: 3rem;
+  width: 5rem;
+  text-anchor: middle;
   width: 100%;
-  border: 1px solid lightgrey;
-  box-shadow: none;
-  background-color: transparent;
+  max-width: inherit;
+}
+
+.activity-form-address-autocomplete .mapboxgl-ctrl-geocoder--input {
+  padding: 6px 13px;
+}
+
+.activity-form-address-autocomplete .mapboxgl-ctrl-geocoder--input:focus {
+  outline: none;
+}
+
+.activity-form-address-autocomplete .mapboxgl-ctrl-geocoder--input::placeholder {
+  color: #DFAEA0;
+  font-family: "Avenir";
+}
+
+.activity-form-address-autocomplete .mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-search {
+  display: none;
 }
