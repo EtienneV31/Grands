@@ -1,7 +1,25 @@
 .profile-container {
   width: 100%;
   position: relative;
-  background-color: #F5F5F5 ;
+ }
+
+ .profile-details {
+  width: 100%;
+  height: 50rem;
+  background-color: #F7EDEC;
+ }
+
+ .map-profile {
+  display: flex;
+  height: 30rem;
+  background-color: #FEFCF5;
+  padding: 1rem;
+  margin-top: 52px;
+  margin-bottom: 50px;
+  margin-left: 240px;
+  margin-right:240px;
+  border-radius: 25px;
+  justify-content: space-between;
  }
 
  .profile-img {
@@ -12,9 +30,14 @@
   filter: grayscale(100%);
  }
 
+ .profile-img img {
+   width: 100%;
+   height: 100%;
+ }
+
  .show-avatar-container {
   position: absolute;
-  top: 50%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg);
   width: 150px;
@@ -34,14 +57,13 @@
 
  .profile-content-container {
     position: absolute;
-    margin-bottom: 34px;
+    margin-bottom: 10rem;
     bottom: 0px;
     background: #FFFCF5;
     box-shadow: 0px 2px 19px rgba(55, 67, 117, 0.1);
     border-radius: 20px;
-
-    margin-bottom: 27px;
-    height: 284px;
+    margin-bottom: 55px;
+    height: 400px;
     padding-left: 60px;
     padding-right: 60px;
     padding-bottom: 11px;
@@ -61,6 +83,41 @@
   text-align: center;
  }
 
+ .infos-address-show {
+  grid-area: activity-name;
+  margin-bottom: 20px;
+  color: #374375;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 480px;
+ }
+
+ .infos-address-show h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: "Funnel Display";
+ }
+
+ .infos-address-show p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Funnel Display";
+  padding-top: 40px;
+ }
+
+
+.infos-map-show{
+  height: 400px;
+  width: 650px;
+  border-radius: 25px;
+  background-color: #a5adcc;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+
 
  .activity-name-show {
   grid-area: activity-name;
@@ -68,34 +125,46 @@
   font-size: 2rem;
   margin-bottom: 10px;
   color: #374375;
-  font-family: "Funnel Display", sans-serif;
+  font-family: "Funnel Display";
   text-align: center;
-  padding-top: 91px;
+  padding-top: 105px;
  }
 
  .infos-user-show {
   grid-area: infos-user;
   text-align: left;
-  font-family: 'Avenir Next';
+  font-family: 'Helvetica';
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
   line-height: 20px;
+}
+
+.infos-user-show p {
+  font-family: 'Funnel Display';
+  font-weight: bold;
+  font-size: 20px;
   color: #374375;
+  margin-bottom: 2rem;
 }
 
 .infos-activity-show {
   grid-area: infos-activity;
-  text-align: right;
 }
 
-
+.infos-activity-show p {
+  font-family: 'Helvetica';
+  text-justify: left;
+  text-align: left;
+  font-size: 20px;
+  color: #374375;
+}
 
  .activity-description-show {
   font-size: 1rem;
   color: #374375;
   text-align: center;
-  font-family: "Avenir Next", regular;
+  font-family: "Helvetica", regular;
   margin-bottom: 20px;
  }
 
@@ -104,15 +173,19 @@
   color: #333;
  }
 
+
 .button-container {
   position: absolute;
   top: 10px;
   right: 10px;
   display: flex;
   gap: 10px;
+  padding-right: 1rem;
 }
 
 .button-container a {
+  font-family: "Funnel Display";
+  font-size: 20px;
   background-color: #FEFCF5;
   color: #BABCE2;
   font-weight: bold;
@@ -120,10 +193,10 @@
   padding-left: 0px;
   text-decoration: none;
 
-}
+  &:hover {
+    background-color: #FEFCF5;
+    text-decoration: none;
+    color: #374375;
+  }
 
-.button-container a:hover {
-  background-color: #FEFCF5;
-  text-decoration: underline;
-  color: #374375;
 }
