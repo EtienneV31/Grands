@@ -1,6 +1,33 @@
-<h1>My profile</h1>
+<div class="space" data-controller="profile-toggle">
+  <div class="neon-btn" data-action="click->profile-toggle#toggle">
+    <span class="neon_txt">
+      PR<span class="faulty_letter">O</span>FILE
+    </span>
+  </div>
 
-<%= current_user.name %><br>
-<%= current_user.age %><br>
-<%= current_user.description %><br>
-<%= current_user.email %><br>
+  <div class="profil-complete" data-profile-toggle-target="content">
+
+    <div class="profil-user-img">
+      <%= cl_image_tag current_user.photo.key,
+          class: "profil-user-img-dtl",
+          data: { action: "click->profile-toggle#toggleScale",
+                  profile_toggle_target: "image" } %>
+    </div>
+
+    <div class="profil-user-info" data-profile-toggle-target="info">
+      <div>
+        <%= current_user.name %>, <%= current_user.age %> ans<br><br>
+      </div>
+
+
+      <div>
+        <em><%= current_user.description %><br></em><br>
+      </div>
+
+      <div>
+        <%= current_user.email %><br>
+      </div>
+    </div>
+
+  </div>
+</div>
