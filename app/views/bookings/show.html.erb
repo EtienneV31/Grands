@@ -1,5 +1,5 @@
 <div class="booking-show-container ">
-    <h1>Your Booking is complete!</h1>
+    <h1>Your booking is complete!</h1>
 
   <div class="card-product">
     <div class="card-product-infos">
@@ -9,7 +9,11 @@
       <p><strong>Total Price:</strong> $<%= @booking.total_price %></p>
       <p><strong>Status:</strong> <%= @booking.status.capitalize %></p>
       </div>
-    <%= cl_image_tag activity.photo.key %>
+      <%= cl_image_tag @booking.activity.photo.key %>
   </div>
 
+  <div class="button-contener-booking" style="margin-top: 100px">
+    <%= link_to 'My bookings', bookings_path, class: 'validate-button-bookings' %>
+    <%= link_to 'Activities', activities_path, class: 'validate-button-activities' %>
+  </div>
 </div>
