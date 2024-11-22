@@ -1,14 +1,15 @@
 
   <nav class="navbar">
     <div class= "logo" >
-      <%= image_tag "logo.png", alt: "Grand's logo" %>
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png", alt: "Grand's logo" %>
+      <% end %>
     </div>
     <div class="nav-links">
     <ul>
-      <li><a href="#explore">Explore</a></li>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#chat">Chat</a></li>
-      <li><%= link_to 'Sign-In', user_session_path, class: 'sign-in-link' %></li>
+      <li><%= link_to 'My bookings', bookings_path %></li>
+      <li><%= link_to 'Explore', activities_path %></li>
+      <li><%= link_to 'Profile', profile_path, class: 'profile-link' %></li>
     </ul>
     </div>
   </nav>

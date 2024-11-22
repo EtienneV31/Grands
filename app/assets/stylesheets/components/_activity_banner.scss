@@ -113,13 +113,17 @@
 }
 
 .button-container a {
-  background-color: #374375;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
+  background-color: #FEFCF5;
+  color: #BABCE2;
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 0px;
   text-decoration: none;
+
 }
 
 .button-container a:hover {
-  background-color: #414b74;
+  background-color: #FEFCF5;
+  text-decoration: underline;
+  color: #374375;
 }

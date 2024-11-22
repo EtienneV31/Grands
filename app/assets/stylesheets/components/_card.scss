@@ -1,7 +1,3 @@
-.card-activities {
-  transition: filter 0.3s ease, transform 0.3s ease; /* Ajoute une transition pour un effet plus fluide */
-}
-
 .card-activities.blur {
   filter: blur(5px); /* Applique un flou */
 }
@@ -15,11 +11,12 @@
 
 .card-activities {
   overflow: hidden;
-  background: white;
+  background: #FFFCF5;
   box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
   border-radius: 27px;
   cursor: pointer; /* Change le curseur en pointeur pour indiquer que l'élément est cliquable */
-
+  transition: filter 0.3s ease, transform 0.3s ease; /* Ajoute une transition pour un effet plus fluide */
+  margin-bottom: 2rem;
 }
 
 .card-activities > img {
@@ -64,6 +61,7 @@
   padding: 2rem;
   text-align: center;
   position: relative;
+  height: 190px;
 }
 
 .card-activities-user {
@@ -73,7 +71,7 @@
   transform: translateX(-50%);
   width: 5rem; /* Largeur fixe */
   height: 5rem; /* Hauteur fixe */
-  border: solid 6px white;
+  border: solid 6px #FFFCF5;
   object-fit: cover; /* Maintient les proportions de l'image */
 }
 
@@ -107,12 +105,3 @@ margin-bottom: 8rem;
   display: flex;
   flex-wrap: wrap;
 }
-
-// .home-page h2 {
-//   font-family: 'Funnel Display';
-//   font-style: normal;
-//   font-weight: 800;
-//   font-size: 1.5rem;
-
-//   color: #374375;
-// }

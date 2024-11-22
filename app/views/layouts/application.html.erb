@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 
 
   </head>
@@ -21,8 +23,8 @@
     <p class="alert"><%= alert %></p>
     <%= render "shared/navbar" %>
     <main>
-    <%= yield %>
+      <%= yield %>
     </main>
+    <%= render 'shared/footer' %>
   </body>
-  <%= render 'shared/footer' %>
 </html>

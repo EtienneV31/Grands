@@ -1,3 +1,4 @@
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -11,7 +12,6 @@
 # Clean-up the DB
 
 User.destroy_all
-Activity.destroy_all
 
 jm = User.new(
   email: "admin@admin.com",
@@ -82,6 +82,8 @@ claire = User.new(
 claire.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_5.jpg")), filename: 'claire.jpg', content_type: 'image/jpg')
 claire.save
 
+puts "#{User.count} users created"
+
 act_1 = Activity.new(
   name: "Râlerie de haut niveau",
   description: "Jean-Michel vous offre une séance de râlerie de haut niveau. Idéal pour évacuer le stress et les tensions.",
@@ -124,6 +126,38 @@ act_4 = Activity.create!(
 act_4.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/balade.jpg")), filename: 'act_4.jpg', content_type: 'image/jpg')
 act_4.save
 
-
-puts "#{User.count} users created"
 puts "#{Activity.count} activities created"
+
+booking_1 = Booking.create!(
+  user: User.first,
+  activity: Activity.first,
+  start_time: DateTime.new(2024, 12, 11, 0, 0),
+  end_time: DateTime.new(2024, 12, 12, 0, 0),
+  status: 0
+)
+
+booking_2 = Booking.create!(
+  user: User.second,
+  activity: Activity.second,
+  start_time: DateTime.new(2024, 11, 26, 0, 0),
+  end_time: DateTime.new(2024, 11, 28, 0, 0),
+  status: 0
+)
+
+booking_3 = Booking.create!(
+  user: User.third,
+  activity: Activity.third,
+  start_time: DateTime.new(2024, 12, 1, 0, 0),
+  end_time: DateTime.new(2024, 12, 2, 0, 0),
+  status: 0
+)
+
+booking_4 = Booking.create!(
+  user: User.fourth,
+  activity: Activity.fourth,
+  start_time: DateTime.new(2024, 12, 25, 0, 0),
+  end_time: DateTime.new(2024, 12, 26, 0, 0),
+  status: 0
+)
+
+puts "#{Booking.count} activities created"

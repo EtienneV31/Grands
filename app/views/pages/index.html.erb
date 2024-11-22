@@ -13,9 +13,7 @@
       <h2>Recomandées</h2>
     </div>
     <ul class="row">
-
-    <%# Mettre les cards dans le back ?? %>
-      <% @activities.sample(4).each do |activity| %>
+     <% @activities.sample(4).each do |activity| %>
         <li class="col-md-3">
           <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
             <%= cl_image_tag activity.photo.key %>

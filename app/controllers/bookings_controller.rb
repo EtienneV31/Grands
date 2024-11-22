@@ -5,6 +5,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def index
+    @bookings = Booking.all
+    @bookings = @bookings.where(user_id: current_user.id)
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -24,7 +29,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time)
+    params.require(:booking).permit(:start_time, :end_time, :price, :user_id)
   end
 
   def set_activity
