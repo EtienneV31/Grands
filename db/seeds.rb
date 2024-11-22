@@ -124,6 +124,85 @@ act_4 = Activity.create!(
 act_4.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/balade.jpg")), filename: 'act_4.jpg', content_type: 'image/jpg')
 act_4.save
 
+act_5 = Activity.new(
+  name: "Chasse aux escargots géants",
+  description: "Lucien vous invite à une aventure incroyable où vous chasserez les escargots géants (en papier mâché) dans un parc local. Humour et imagination garantis !",
+  price: 25,
+  address: "Carcassonne",
+  user: User.first
+)
+act_5.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/escargot.jpg")), filename: 'act_5.jpg', content_type: 'image/jpg')
+act_5.save
+
+act_6 = Activity.create!(
+  name: "Concours de cri primal",
+  description: "Suzanne organise un concours hilarant où vous devrez libérer votre cri primal le plus puissant pour impressionner les juges.",
+  price: 15,
+  address: "L'Isle-Jourdain",
+  user: User.second
+)
+act_6.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/primal.jpg")), filename: 'act_6.jpg', content_type: 'image/jpg')
+act_6.save
+
+act_7 = Activity.new(
+  name: "Peinture sur champignons (non comestibles)",
+  description: "Édouard vous guide dans un atelier artistique où vous peindrez de magnifiques motifs sur des champignons géants en plastique.",
+  price: 30,
+  address: "Toulouse",
+  user: User.third
+)
+act_7.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/champignons.jpg")), filename: 'act_7.jpg', content_type: 'image/jpg')
+act_7.save
+
+act_8 = Activity.create!(
+  name: "Défilé de mode pour pigeons",
+  description: "Amélie vous propose de créer de mini costumes pour pigeons et d’assister à un défilé où les oiseaux locaux volent la vedette.",
+  price: 20,
+  address: "Blagnac",
+  user: User.fourth
+)
+act_8.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/pigeon.jpg")), filename: 'act_8.jpg', content_type: 'image/jpg')
+act_8.save
+
+act_9 = Activity.new(
+  name: "Cours de jonglage avec légumes",
+  description: "Marc enseigne l’art du jonglage avec des légumes bio. Attention : ne mangez pas vos outils avant la fin du cours !",
+  price: 18,
+  address: "Montpellier",
+  user: User.fifth
+)
+act_9.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/jongle.jpg")), filename: 'act_9.jpg', content_type: 'image/jpg')
+act_9.save
+
+act_10 = Activity.create!(
+  name: "Course de brouettes costumées",
+  description: "Claire vous invite à participer à une course délirante où chaque équipe customise sa brouette avant de la propulser sur un parcours farfelu.",
+  price: 50,
+  address: "Albi",
+  user: User.second
+)
+act_10.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/brouette.jpg")), filename: 'act_10.jpg', content_type: 'image/jpg')
+act_10.save
+
+act_11 = Activity.new(
+  name: "Championnat de cache-cache pour adultes sérieux",
+  description: "Jean-Jacques vous convie à un cache-cache dans un centre commercial. Attention : l’arbitre note le sérieux de votre dissimulation et vos excuses si vous êtes trouvé.",
+  price: 40,
+  address: "Colomiers",
+  user: User.first
+)
+act_11.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/cache-cache.jpg")), filename: 'act_11.jpg', content_type: 'image/jpg')
+act_11.save
+
+act_12 = Activity.create!(
+  name: "Cours de danse pour meubles IKEA",
+  description: "Béatrice vous apprend à danser en synchronisation avec une Billy ou une Lack. Parfait pour ceux qui veulent bouger tout en restant pratiques !",
+  price: 15,
+  address: "Foix",
+  user: User.third
+)
+act_12.photo.attach(io: File.open(Rails.root.join("db/seeds/activities/dance.jpg")), filename: 'act_12.jpg', content_type: 'image/jpg')
+act_12.save
 
 puts "#{User.count} users created"
 puts "#{Activity.count} activities created"
