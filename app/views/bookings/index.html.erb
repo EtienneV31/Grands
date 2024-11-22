@@ -26,13 +26,13 @@
     <h3>Expériences réalisées</h3>
       <div class="card-product">
         <div class="card-product-infos">
-          <h2><strong><%= Booking.last.activity.name %></strong></h2>
-          <p><strong>Start Time:</strong> <%= Booking.last.start_time.strftime("%B %d, %Y %H:%M") %></p>
-          <p><strong>End Time:</strong> <%= Booking.last.end_time.strftime("%B %d, %Y %H:%M") %></p>
-          <p><strong>Total Price:</strong> $<%= Booking.last.total_price %></p>
-          <p><strong>Status:</strong> <%= Booking.last.status.capitalize %></p>
+          <h2><strong><%= Booking.fourth.activity.name %></strong></h2>
+          <p><strong>Start Time:</strong> <%= Booking.fourth.start_time.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>End Time:</strong> <%= Booking.fourth.end_time.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>Total Price:</strong> $<%= Booking.fourth.total_price %></p>
+          <p><strong>Status:</strong> <%= Booking.fourth.status.capitalize %></p>
           </div>
-          <%= cl_image_tag Booking.last.activity.photo.key %>
+          <%= cl_image_tag Booking.fourth.activity.photo.key %>
       </div>
   </div>
 
