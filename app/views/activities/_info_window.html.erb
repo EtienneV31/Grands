@@ -1,4 +1,16 @@
-<h2><%= activity.name %></h2>
-<p><%= activity.address %></p>
-<p><%= activity.description %></p>
-<p><%= activity.price %>€</p>
+<div class="mapboxgl-popup-content">
+  <div class="info">
+    <h2><%= activity.name %></h2>
+    <p><%= activity.address %></p>
+    <p><%= activity.description %></p>
+    <p><%= activity.price %>€</p>
+  </div>
+
+  <div class="user-photo">
+    <% if activity.user.photo.attached? %>
+      <%= cl_image_tag activity.user.photo.key, width: 50, height: 50, crop: :fill, class: "user-photo" %>
+    <% else %>
+      <p>No user photo available</p>
+    <% end %>
+  </div>
+</div>
