@@ -6,9 +6,11 @@
     <div class="form-container">
       <%= form_with url: activities_path, method: :get, class: "d-flex" do %>
         <div class="search-form">
-          <%= text_field_tag :city, params[:city], class: "form-control" , placeholder: "City" %>
-            <%= text_field_tag :name, params[:name], class: "form-control" , placeholder: "Activity" %>
-              <%= submit_tag "Search" , name: "" , class: "btn btn-primary" %>
+
+          <%= text_field_tag :city, params[:city], class: "form-control", placeholder: "City" %>
+          <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "Activity" %>
+          <%= submit_tag "Search", name: "", class: "search-button btn" %>
+
         </div>
         <% end %>
     </div>
@@ -20,8 +22,8 @@
   <div class="menu-container">
     <div class="menu-intrapage">
       <ul>
-        <li data-action="click->toggle#showList" data-toggle-target="list" class="active">Liste</li>
-        <li data-action="click->toggle#showMap" data-toggle-target="map">Map</li>
+        <li data-action="click->toggle#showList" data-toggle-target="list" class="active btn-toggle">Liste</li>
+        <li data-action="click->toggle#showMap" data-toggle-target="map" class="btn-toggle">Map</li>
       </ul>
     </div>
   </div>
@@ -30,24 +32,21 @@
       <ul class="row">
         <% @activities.sample(12).each do |activity| %>
           <li class="col-md-3">
-            <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
-              <%= cl_image_tag activity.photo.key %>
-                <div class="card-activities-infos">
-                  <div>
-                    <h2>
-                      <%= activity.name %>
-                    </h2>
-                    <p>
-                      <%= activity.description %>
-                    </p>
-                  </div>
-                </div>
-            </div>
+          <div class="card-activities" data-id="<%= activity.id %>" data-controller="card-activities">
+          <%= cl_image_tag activity.photo.key %>
+           <div class="card-activities-infos">
+             <div>
+              <h2><%= activity.name %></h2>
+              <p><%= activity.description %></p>
+             </div>
+           </div>
+          </div>
           </li>
           <% end %>
       </ul>
     </div>
   </div>
+
 
   <div data-toggle-target="mapSection" class="content-section hidden">
     <div class="map container justify-content" style="width: 85rem; height: 55rem;" data-controller="map"
@@ -55,6 +54,7 @@
 
     </div>
   </div>
+
 
 </div>
 

@@ -30,6 +30,13 @@
   margin: O;
 }
 
+
+input.form-control::placeholder {
+  color: #BABCE2;
+  font-family: "Funnel Display";
+}
+
+
 .form-container {
   display: flex;
   justify-content: space-between;
@@ -64,17 +71,15 @@
 .search-button {
   background-color: #374375;
   font-weight: bolder;
+  font-size: 20px;
   color: #FFFCF5 ;
   width: 8rem;
   border-radius: 15px;
   height: 2.5rem;
-}
+  padding-bottom: 1rem;
 
-.search-button :hover {
-  background-color: #FFFCF5 ;
-  font-weight: bolder;
-  color: #374375;
-  width: 8rem;
-  border-radius: 15px;
-  height: 2.5rem;
+  &:hover {
+    background-color: #FFFCF5;
+    color: #374375;
+  }
 }

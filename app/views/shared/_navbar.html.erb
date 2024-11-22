@@ -7,9 +7,9 @@
     </div>
     <div class="nav-links">
     <ul>
+      <li><%= link_to 'My bookings', bookings_path %></li>
       <li><%= link_to 'Explore', activities_path %></li>
-      <li><%= link_to 'Profile', root_path %></li>
-      <li><%= link_to 'Sign-In', user_session_path, class: 'sign-in-link' %></li>
+      <li><%= link_to 'Profile', profile_path, class: 'profile-link' %></li>
     </ul>
     </div>
   </nav>

@@ -1,6 +1,19 @@
-<h1>Your Booking</h1>
-<p><strong>Activity:</strong> <%= @booking.activity.name %></p>
-<p><strong>Start Time:</strong> <%= @booking.start_time.strftime("%B %d, %Y %H:%M") %></p>
-<p><strong>End Time:</strong> <%= @booking.end_time.strftime("%B %d, %Y %H:%M") %></p>
-<p><strong>Total Price:</strong> $<%= @booking.total_price %></p>
-<p><strong>Status:</strong> <%= @booking.status.capitalize %></p>
+<div class="booking-show-container ">
+    <h1>Your booking is complete!</h1>
+
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h2><strong><%= @booking.activity.name %></strong></h2>
+      <p><strong>Start Time:</strong> <%= @booking.start_time.strftime("%B %d, %Y %H:%M") %></p>
+      <p><strong>End Time:</strong> <%= @booking.end_time.strftime("%B %d, %Y %H:%M") %></p>
+      <p><strong>Total Price:</strong> $<%= @booking.total_price %></p>
+      <p><strong>Status:</strong> <%= @booking.status.capitalize %></p>
+      </div>
+      <%= cl_image_tag @booking.activity.photo.key %>
+  </div>
+
+  <div class="button-contener-booking" style="margin-top: 100px">
+    <%= link_to 'My bookings', bookings_path, class: 'validate-button-bookings' %>
+    <%= link_to 'Activities', activities_path, class: 'validate-button-activities' %>
+  </div>
+</div>
