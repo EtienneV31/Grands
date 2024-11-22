@@ -8,7 +8,7 @@
         <div class="row gy-3">
           <%= f.input :name, placeholder: "Name", label_html: { class: "sr-only" }, wrapper_html: { class: "col-8" }, input_html: { class: "create-control w-100" } %>
           <%= f.input :price, placeholder: "Price", label_html: { class: "sr-only" }, wrapper_html: { class: "col-4" }, input_html: { class: "create-control w-100" } %>
-          <%= f.input :address, placeholder: "Address", label_html: { class: "sr-only" }, wrapper_html: { class: "col-12" }, input_html: { class: "create-control w-100" }  %>
+          <%= f.input :address, placeholder: "Address", label_html: { class: "sr-only" },  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"}, wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]},  class: "activity-form-address-autocomplete w-100"} %>
           <%= f.input :description, placeholder: "Description", label_html: { class: "sr-only" }, wrapper_html: { class: "col-12" }, input_html: { class: "create-control w-100" } %>
           <%= f.input :photo, placeholder: "Name", label_html: { class: "sr-only" }, as: :file, wrapper_html: { class: "col-12" }, input_html: { class: "create-control w-100" } %>
         </div>
@@ -20,5 +20,3 @@
 
   </div>
 </div>
-
-
