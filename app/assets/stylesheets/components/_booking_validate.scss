@@ -1,0 +1,105 @@
+
+.booking-show-container {
+  background-color: #374375;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  height: 60rem;
+  color: #FFFCF5;
+}
+
+.booking-show-container h1 {
+  font-family: "Funnel Display";
+  position: static;
+  font-weight: bolder;
+  color: #FFFCF5;
+  font-size: 50px;
+  padding-left: 8rem;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 350px;
+  background: #FFFCF5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 7rem;
+  border-radius: 22px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 400px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-family: "Funnel Display";
+  font-weight: bolder;
+  color: #374375;
+  font-size: 30px;
+  margin: 0;
+  padding-bottom: 2.5rem;
+}
+
+.card-product p {
+  font-family: "Funnel Display";
+  color: #374375;
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 4rem;
+}
+
+
+.validate-button-bookings {
+  background-color: #BABCE2;
+  font-weight: bolder;
+  font-size: 23px;
+  color: #FFFCF5 ;
+  text-align: center;
+  padding-top: 7px;
+  border-radius: 20px;
+  height: 3rem;
+  width: 13rem;
+  text-decoration: none;
+  margin: 0;
+  box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
+
+  &:hover {
+    background-color: #FFFCF5;
+    color: #BABCE2;
+  }
+}
+
+.validate-button-activities {
+  background-color: #DFAEA0;
+  font-weight: bolder;
+  font-size: 23px;
+  color: #FFFCF5 ;
+  text-align: center;
+  padding-top: 7px;
+  border-radius: 20px;
+  height: 3rem;
+  width: 13rem;
+  text-decoration: none;
+  margin: 0;
+  box-shadow: 0 0 15px rgba(55, 67, 117,0.1);
+
+  &:hover {
+    background-color: #FFFCF5;
+    color: #DFAEA0;;
+  }
+}
+
+.button-contener-booking {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30rem;
+  margin-top: 15rem;
+ }
