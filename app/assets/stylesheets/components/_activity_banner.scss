@@ -133,6 +133,10 @@
  .infos-user-show {
   grid-area: infos-user;
   text-align: left;
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
   line-height: 20px;
 }
 
@@ -160,7 +164,7 @@
   font-size: 1rem;
   color: #374375;
   text-align: center;
-  font-family: "Avenir Next", regular;
+  font-family: "Helvetica", regular;
   margin-bottom: 20px;
  }
 

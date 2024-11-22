@@ -1,6 +1,24 @@
-<h1>My bookings</h1>
+<div class="booking-index-container">
+    <h1>My bookings</h1>
+    <p>Check your current bookings and former  experiences.</p>
+</div>
 
-<% @bookings.each do |booking| %>
-  <%= booking.user.id  %>
-  <%= booking.activity.name  %>
-<% end %>
+<div class="booking-card-container">
+  <div class="booking-index-cards">
+    <h2>A venir</h2>
+    <% @bookings.each do |booking| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h2><strong><%= booking.activity.name %></strong></h2>
+          <p><strong>Start Time:</strong> <%= booking.start_time.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>End Time:</strong> <%= booking.end_time.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>Total Price:</strong> $<%= booking.total_price %></p>
+          <p><strong>Status:</strong> <%= booking.status.capitalize %></p>
+          </div>
+          <%= cl_image_tag booking.activity.photo.key %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="void-div"></div>
+</div>
