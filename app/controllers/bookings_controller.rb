@@ -8,6 +8,8 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
     @bookings = @bookings.where(user_id: current_user.id)
+
+    @activities = Activity.all
   end
 
   def create
