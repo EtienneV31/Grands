@@ -1,7 +1,6 @@
 .booking_button {
   font-weight: 700;
   font-size: 30px;
-
   margin: 2rem auto;
 
   padding: 5px;
@@ -18,32 +17,25 @@
   border: 1px solid #374375;
 }
 
-.booking_button p {
-  padding: 10px;
-  margin-left: 1rem;
-  margin-bottom: 0;
-}
-
 .booking-btn {
-  all: unset;
-
   font-size: 24px;
-
-  margin: 10px;
-  margin-right: 1rem;
-  padding: 0.5rem;
-
-  width: 9rem;
-
+  font-family: "Funnel Display";
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   color: #374375;
   background-color: #FFFCF5;
-
   border-radius: 48px;
   text-align: center;
-}
+  border: 1px solid transparent;
 
-.booking-btn:hover {
-  background-color: #b9bce2;
-  opacity: 0.9;
-  color: #374375;
+  &:hover {
+    background-color: #b9bce2;
+    opacity: 0.9;
+    color: #374375;
+    border: 1px solid transparent;
+  }
+
 }
