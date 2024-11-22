@@ -208,7 +208,7 @@ act_12.save
 
 
 booking_1 = Booking.create!(
-  user: User.first,
+  user: User.second,
   activity: Activity.first,
   start_time: DateTime.new(2024, 12, 11, 0, 0),
   end_time: DateTime.new(2024, 12, 12, 0, 0),
