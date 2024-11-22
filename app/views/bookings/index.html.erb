@@ -5,7 +5,7 @@
 
 <div class="booking-card-container">
   <div class="booking-index-cards">
-    <h2>A venir</h2>
+    <h3>A venir</h3>
     <% @bookings.each do |booking| %>
       <div class="card-product">
         <div class="card-product-infos">
@@ -21,4 +21,21 @@
   </div>
 
   <div class="void-div"></div>
+
+  <div class="booking-index-cards">
+    <h3>Expériences réalisées</h3>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <h2><strong><%= Booking.last.activity.name %></strong></h2>
+          <p><strong>Start Time:</strong> <%= Booking.last.start_time.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>End Time:</strong> <%= Booking.last.end_time.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>Total Price:</strong> $<%= Booking.last.total_price %></p>
+          <p><strong>Status:</strong> <%= Booking.last.status.capitalize %></p>
+          </div>
+          <%= cl_image_tag Booking.last.activity.photo.key %>
+      </div>
+  </div>
+
+  <div class="void-div"></div>
+
 </div>
