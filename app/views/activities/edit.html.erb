@@ -1,9 +1,22 @@
-<h1> Edit Activity </h1>
+<div class="create-banner">
+  <div class="new-container">
+    <h1> Edit Activity </h1>
+    <h3>Bah alors Janot, on s'est planté ?!</h3>
 
-<%= simple_form_for @activity do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit activity", class: "btn btn-primary" %>
-<% end %>
+    <div class="create-form">
+      <%= simple_form_for @activity do |f| %>
+        <div class="row gy-3">
+          <%= f.input :name, placeholder: "Name", label_html: { class: "sr-only" }, wrapper_html: { class: "col-8" }, input_html: { class: "create-control w-100" } %>
+          <%= f.input :price, placeholder: "Price", label_html: { class: "sr-only" }, wrapper_html: { class: "col-4" }, input_html: { class: "create-control w-100" } %>
+          <%= f.input :address, placeholder: "Address", label_html: { class: "sr-only" }, wrapper_html: { class: "col-12" }, input_html: { class: "create-control w-100" }  %>
+          <%= f.input :description, placeholder: "Description", label_html: { class: "sr-only" }, wrapper_html: { class: "col-12" }, input_html: { class: "create-control w-100" } %>
+          <%= f.input :photo, placeholder: "Name", label_html: { class: "sr-only" }, as: :file, wrapper_html: { class: "col-12" }, input_html: { class: "create-control w-100" } %>
+        </div>
+        <div class="d-flex justify-content-center">
+          <%= f.submit "Submit activity", class: "create-button btn" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
