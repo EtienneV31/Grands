@@ -61,7 +61,7 @@ julie.photo.attach(io: File.open(Rails.root.join("db/seeds/users/user_2.jpg")), 
 julie.save
 
 paul = User.new(
-  email: "paul.curieux@exploration.com",
+  email: "c",
   password: "paul123",
   name: "Paul l'Aventurier Curieux",
   age: 79,
